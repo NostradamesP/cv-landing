@@ -1,0 +1,248 @@
+@import "tailwindcss";
+@import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/inter/800.css";
+
+@theme {
+  --color-navy-900: #0a1628;
+  --color-navy-800: #0f1f3d;
+  --color-navy-700: #162d50;
+  --color-navy-600: #1e3a5f;
+  --color-navy-500: #2b4d7a;
+  --color-accent: #3b82f6;
+  --color-accent-dark: #1d4ed8;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-slate-900);
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* ===== HERO ===== */
+.hero-gradient {
+  background: linear-gradient(135deg, #0a1628 0%, #0f1f3d 50%, #162d50 100%);
+}
+
+/* Particle canvas */
+#particles-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Typewriter cursor blink */
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: #3b82f6;
+  margin-left: 2px;
+  animation: blink 0.7s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===== CARDS ===== */
+.project-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.18);
+}
+
+/* Skill card */
+.skill-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== GLASS NAV ===== */
+.glass-nav {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+/* ===== SECTION PADDING ===== */
+.section-padding {
+  padding: 5rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+
+/* ===== GRADIENT TEXT ===== */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== BG GRID ===== */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ===== FLOATING ANIMATION ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* ===== REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== SHIMMER ===== */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 50%, #3b82f6 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ===== GLOW ===== */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.2); }
+}
+.glow-card {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+
+/* Better touch targets */
+@media (max-width: 640px) {
+  .section-padding {
+    padding: 3rem 1.25rem;
+  }
+
+  /* Reduce animation complexity on mobile for performance */
+  .animate-float,
+  .animate-float-slow {
+    animation-duration: 0s !important; /* disable floating on mobile */
+  }
+
+  /* Improve button touch targets */
+  button, a {
+    min-height: 44px;
+  }
+
+  /* Fix hero text size on small screens */
+  #hero h1 {
+    font-size: 2.25rem !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Make timeline dots bigger for touch */
+  .w-4.h-4 {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Ensure cards don't overflow */
+  .project-card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Reduce gaps */
+  .gap-8 { gap: 1rem !important; }
+  .gap-5 { gap: 0.75rem !important; }
+  .gap-4 { gap: 0.5rem !important; }
+
+  /* Full width on mobile */
+  .grid-cols-2 { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 380px) {
+  #hero h1 {
+    font-size: 1.75rem !important;
+  }
+  #hero .text-lg {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
