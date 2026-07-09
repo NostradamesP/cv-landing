@@ -152,7 +152,7 @@ def role_block(role, company, meta, bullets, chips_text):
     flow = [
         Paragraph(role, STYLES["ResumeRole"]),
         Paragraph(f"{money_text(company)}", STYLES["ResumeBody"]),
-        Paragraph(f"<font color='{MUTED.hexval()}'>{money_text(meta)}</font>", STYLES["ResumeMuted"]),
+        Paragraph(f"<font color='#{MUTED.hexval()[2:]}'>{money_text(meta)}</font>", STYLES["ResumeMuted"]),
     ]
     flow.append(Spacer(1, 1.5 * mm))
     flow.extend(bullet_paragraph(item) for item in bullets)
