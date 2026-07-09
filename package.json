@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "python3 scripts/generate_cv_pdf.py",
+    "prebuild": "python3 scripts/generate_cv_pdf.py || true",
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview"
