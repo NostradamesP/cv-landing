@@ -244,14 +244,13 @@ export default function Projects() {
             viewport={{ once: true }}
             className="text-xs font-semibold text-accent uppercase tracking-[0.2em]"
           >
-            Portfolio
+            Featured Projects
           </motion.span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">
-            Projects &{' '}
-            <span className="gradient-text">Work</span>
+            Proyectos <span className="gradient-text">destacados</span>
           </h2>
           <p className="text-slate-500 text-sm mt-2 max-w-xl mx-auto">
-            Production applications and tools I've built — from e-invoicing to audio DAWs
+            Productos en producción — de facturación electrónica a estudios de audio en el navegador
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-blue-400 rounded-full mx-auto mt-4" />
         </motion.div>
@@ -277,11 +276,11 @@ export default function Projects() {
         >
           <span className="inline-flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            Live — deployed & accessible
+            Live — desplegado y accesible
           </span>
           <span className="inline-flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-slate-400" />
-            Local — development only
+            Local — en desarrollo
           </span>
         </motion.div>
       </div>

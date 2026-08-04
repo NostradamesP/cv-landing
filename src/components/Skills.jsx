@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const skillCategories = [
   {
-    title: 'IT Infrastructure',
+    title: 'Infraestructura IT',
     skills: ['Fortinet FortiGate', 'Active Directory', 'ManageEngine EPM/ServiceDesk', 'Mosyle MDM', 'Google Workspace Admin', 'VLAN / DHCP / DNS'],
   },
   {
@@ -14,19 +14,19 @@ const skillCategories = [
     skills: ['React 18/19', 'Flutter 3.38 / Dart', 'Tailwind CSS 3', 'Vite 6/8', 'GSAP / Lenis', 'Framer Motion', 'Vanilla JS / HTML5 / CSS3'],
   },
   {
-    title: 'Backend & Databases',
+    title: 'Backend & Bases de datos',
     skills: ['Node.js / Fastify 5', 'PostgreSQL 16', 'Redis 7', 'Firestore', 'Drizzle ORM', 'REST APIs / WebSockets', 'Zod Validation'],
   },
   {
-    title: 'Security & Networking',
+    title: 'Seguridad & Networking',
     skills: ['Fortinet (FortiGate, VPN, MSS)', 'JWT / bcrypt', 'CSP Headers', 'RBAC', 'Firestore / Supabase RLS', 'OWASP Top 10'],
   },
   {
-    title: 'Automation & AI',
+    title: 'Automatización & IA',
     skills: ['n8n Workflows', 'Python Scripting', 'OpenAI / Gemini APIs', 'Google Apps Script', 'Automated Video Pipelines', 'LLM Integrations'],
   },
   {
-    title: 'Game Development',
+    title: 'Desarrollo de Juegos',
     skills: ['Godot Engine 4.6+', 'GDScript 2.0', 'Procedural Generation', 'Tile-based 2D', 'NPC AI / Economy Systems'],
   },
 ]
@@ -73,7 +73,7 @@ function SkillCategory({ category }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-padding bg-white relative overflow-hidden">
+    <section id="skills" className="section-padding bg-slate-50 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -88,13 +88,13 @@ export default function Skills() {
             viewport={{ once: true }}
             className="text-xs font-semibold text-accent uppercase tracking-[0.2em]"
           >
-            Expertise
+            Tech Stack
           </motion.span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">
-            Technical <span className="gradient-text">Skills</span>
+            Mi <span className="gradient-text">Tech Stack</span>
           </h2>
           <p className="text-slate-500 text-sm mt-2 max-w-xl mx-auto">
-            From firewall configuration to full-stack deployment — a comprehensive toolkit across infrastructure, cloud, and development
+            Del firewall al deployment — un kit completo de infraestructura, cloud y desarrollo
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-blue-400 rounded-full mx-auto mt-4" />
         </motion.div>

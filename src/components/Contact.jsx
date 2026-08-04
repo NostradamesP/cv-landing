@@ -1,19 +1,51 @@
 import { motion } from 'framer-motion'
-import { Send } from 'lucide-react'
+import { Mail, Phone, MapPin, Send } from 'lucide-react'
+
+const LinkedinIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+)
+
+const methods = [
+  { icon: Mail, label: 'Email', value: 'norascript@gmail.com', href: 'mailto:norascript@gmail.com' },
+  { icon: Phone, label: 'Teléfono', value: '809-943-1727', href: 'tel:18099431727' },
+  {
+    icon: MapPin,
+    label: 'Ubicación',
+    value: 'Santo Domingo, DR',
+    href: 'https://www.google.com/maps/search/Santo+Domingo,+Dominican+Republic',
+  },
+]
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' } },
+}
 
 export default function Contact() {
   return (
     <section id="contact" className="section-padding bg-slate-50 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
-          className="rounded-[2rem] border border-slate-200 bg-white p-8 text-center shadow-[0_24px_60px_-40px_rgba(15,23,42,0.3)] sm:p-10"
+          className="rounded-[2rem] border border-slate-200 bg-white p-8 sm:p-12 text-center shadow-[0_24px_60px_-40px_rgba(15,23,42,0.3)] overflow-hidden relative"
         >
+          <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-accent/10 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-blue-600/10 blur-3xl pointer-events-none" />
+
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -23,22 +55,68 @@ export default function Contact() {
             Contact
           </motion.span>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
-            Open to the right opportunity
+            Hablemos de tu <span className="gradient-text">proyecto</span>
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
-            If you want a more direct conversation, the full contact details live in the hero.
-            This space is just a clean closing note for projects, roles, or collaborations.
+            ¿Tienes una idea, un proyecto en curso o una posición abierta? Escríbeme y respondo lo antes posible.
           </p>
 
-          <motion.a
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            href="mailto:norascript@gmail.com"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-navy-600 px-6 py-3 font-medium text-white shadow-lg shadow-navy-600/20 transition-all duration-200 hover:bg-navy-700 hover:shadow-navy-600/30"
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-30px' }}
+            className="mt-8 grid sm:grid-cols-3 gap-3"
           >
-            <Send size={16} />
-            <span>Send me an email</span>
-          </motion.a>
+            {methods.map(({ icon: Icon, label, value, href }) => (
+              <motion.a
+                key={label}
+                variants={cardVariants}
+                whileHover={{ y: -3 }}
+                href={href}
+                target={href.startsWith('http') ? '_blank' : undefined}
+                rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-accent/30 hover:bg-white hover:shadow-lg transition-all duration-300"
+              >
+                <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-blue-500 text-white shadow-lg shadow-blue-500/25 group-hover:scale-110 transition-transform duration-300">
+                  <Icon size={18} />
+                </div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                  {label}
+                </p>
+                <p className="mt-1 text-sm font-bold text-slate-900 break-all">{value}</p>
+              </motion.a>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-8 flex flex-wrap items-center justify-center gap-3"
+          >
+            <motion.a
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              href="mailto:norascript@gmail.com"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-blue-500 px-7 py-3 font-bold text-white shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300"
+            >
+              <Send size={16} />
+              <span>Escríbeme un correo</span>
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              href="https://www.linkedin.com/in/eduardo-velasquez-437a3422a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-7 py-3 font-bold text-slate-700 hover:border-accent/40 hover:text-accent transition-all duration-300"
+            >
+              <LinkedinIcon size={16} />
+              <span>Conectar en LinkedIn</span>
+            </motion.a>
+          </motion.div>
         </motion.div>
       </div>
     </section>

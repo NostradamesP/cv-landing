@@ -3,11 +3,11 @@ import { Shield, Server, Cloud, Network, Wrench, Code2 } from 'lucide-react'
 
 const highlights = [
   { icon: Network, label: 'Fortinet & Networking', desc: 'FortiGate, VLAN, VPN, MSS clamping', color: 'from-red-500 to-orange-500' },
-  { icon: Server, label: 'Infrastructure', desc: 'Active Directory, ManageEngine, Mosyle MDM', color: 'from-blue-500 to-cyan-500' },
-  { icon: Cloud, label: 'Cloud Platforms', desc: 'Firebase, Supabase, Cloudflare, Docker', color: 'from-purple-500 to-pink-500' },
+  { icon: Server, label: 'Infraestructura', desc: 'Active Directory, ManageEngine, Mosyle MDM', color: 'from-blue-500 to-cyan-500' },
+  { icon: Cloud, label: 'Plataformas Cloud', desc: 'Firebase, Supabase, Cloudflare, Docker', color: 'from-purple-500 to-pink-500' },
   { icon: Code2, label: 'Full-Stack Dev', desc: 'Flutter, React, Fastify, PostgreSQL', color: 'from-emerald-500 to-teal-500' },
-  { icon: Shield, label: 'Security', desc: 'JWT, CSP, RBAC, OWASP, Firewall policies', color: 'from-amber-500 to-yellow-500' },
-  { icon: Wrench, label: 'Automation', desc: 'n8n workflows, Python, CI/CD, LLM pipelines', color: 'from-indigo-500 to-violet-500' },
+  { icon: Shield, label: 'Seguridad', desc: 'JWT, CSP, RBAC, OWASP, políticas de firewall', color: 'from-amber-500 to-yellow-500' },
+  { icon: Wrench, label: 'Automatización', desc: 'n8n workflows, Python, CI/CD, pipelines LLM', color: 'from-indigo-500 to-violet-500' },
 ]
 
 const containerVariants = {
@@ -59,8 +59,7 @@ export default function About() {
             About Me
           </motion.span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">
-            Bridging IT Infrastructure &{' '}
-            <span className="gradient-text">Software Development</span>
+            De la infraestructura al <span className="gradient-text">desarrollo con IA</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-blue-400 rounded-full mx-auto mt-4" />
         </motion.div>
@@ -74,15 +73,14 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-slate-700 leading-relaxed mb-4 text-[15px]">
-              IT Support Specialist at <strong className="text-slate-900">Carol Morgan School</strong> managing 
-              200+ devices, <strong>Fortinet</strong> firewalls, <strong>Active Directory</strong>, and{' '}
-              <strong>ManageEngine</strong> endpoint infrastructure. Simultaneously architecting production-grade 
-              applications across <strong>Firebase</strong>, <strong>Supabase</strong>, <strong>Cloudflare</strong>, and <strong>Docker</strong>.
+              Mi camino comenzó en <strong className="text-slate-900">tecnología audiovisual para eventos en vivo</strong> — LED, sonido, cámaras y montaje — donde aprendí
+              que el sistema tiene que funcionar <em>en directo</em>. De ahí pasé a <strong className="text-slate-900">IT Support Specialist en Carol Morgan School</strong>,
+              administrando 200+ dispositivos, firewalls <strong>Fortinet</strong>, <strong>Active Directory</strong> y endpoints con <strong>ManageEngine</strong>.
             </p>
             <p className="text-slate-600 leading-relaxed text-sm">
-              From configuring VLANs and firewall policies on FortiGate to deploying React + Fastify apps 
-              with PostgreSQL and Redis, I bridge the gap between IT operations and modern software development. 
-              Security-minded, automation-driven, and passionate about solving real problems with technology.
+              En paralelo construí productos de negocio en producción: sistemas de facturación, kanban operativo, portales y plataformas
+              con <strong>React</strong>, <strong>Flutter</strong>, <strong>Fastify</strong> y <strong>PostgreSQL</strong>, desplegados en <strong>Firebase</strong>, <strong>Supabase</strong> y <strong>Cloudflare</strong>.
+              Hoy integro la disciplina de operaciones IT con el desarrollo de software y la <strong>automatización con IA</strong> para resolver problemas reales de negocio.
             </p>
           </motion.div>
 
@@ -102,11 +100,10 @@ export default function About() {
               </h3>
               <div className="space-y-3.5 text-sm">
                 {[
-                  ['📍 Based in', 'Santo Domingo, DR'],
-                  ['💼 Current Role', 'IT Support @ Carol Morgan School'],
+                  ['📍 Ubicación', 'Santo Domingo, DR'],
                   ['📧 Email', 'norascript@gmail.com'],
-                  ['📞 Phone', '809-943-1727'],
-                  ['🌐 Languages', 'Spanish · English'],
+                  ['📞 Teléfono', '809-943-1727'],
+                  ['🌐 Idiomas', 'Español · English'],
                 ].map(([label, value], i) => (
                   <motion.div
                     key={label}

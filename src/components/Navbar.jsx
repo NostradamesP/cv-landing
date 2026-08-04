@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navLinks = [
   { id: 'hero', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'experience', label: 'Experience' },
+  { id: 'expertise', label: 'Expertise' },
   { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
   { id: 'contact', label: 'Contact' },
 ]
 
@@ -47,9 +47,11 @@ export default function Navbar({ activeSection }) {
         {/* Logo */}
         <button
           onClick={() => scrollTo('hero')}
-          className="text-xl font-bold tracking-tight"
+          className={`text-xl font-bold tracking-tight transition-colors duration-300 ${
+            scrolled ? 'text-navy-600' : 'text-white'
+          }`}
         >
-          <span className="text-navy-600">ERV</span>
+          <span>ERV</span>
           <span className="text-accent">.</span>
         </button>
 
@@ -62,7 +64,9 @@ export default function Navbar({ activeSection }) {
               className={`relative text-sm font-medium transition-colors duration-200 ${
                 activeSection === link.id
                   ? 'text-accent'
-                  : 'text-slate-600 hover:text-slate-900'
+                  : scrolled
+                    ? 'text-slate-600 hover:text-slate-900'
+                    : 'text-white/80 hover:text-white'
               }`}
             >
               {link.label}
@@ -78,9 +82,9 @@ export default function Navbar({ activeSection }) {
           <motion.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            href="/CV_Eduardo_Velasquez.pdf"
+            href="/CV_Eduardo_Rojas_Velasquez.pdf"
             download
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-navy-600 rounded-lg hover:bg-navy-700 transition-colors duration-200 shadow-sm"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-accent to-blue-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-200"
           >
             <Download size={14} />
             <span>Download CV</span>
@@ -128,9 +132,9 @@ export default function Navbar({ activeSection }) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
                 whileHover={{ scale: 1.02 }}
-                href="/CV_Eduardo_Velasquez.pdf"
+                href="/CV_Eduardo_Rojas_Velasquez.pdf"
                 download
-                className="flex items-center justify-center gap-2 mt-2 px-4 py-2.5 text-sm font-medium text-white bg-navy-600 rounded-lg hover:bg-navy-700 transition-colors"
+                className="flex items-center justify-center gap-2 mt-2 px-4 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-accent to-blue-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all"
               >
                 <Download size={14} />
                 <span>Download CV</span>
