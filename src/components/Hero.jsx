@@ -245,7 +245,7 @@ export default function Hero() {
                   href={item.href}
                   target={item.href.startsWith('http') ? '_blank' : undefined}
                   rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-left backdrop-blur-sm transition-all duration-300 hover:border-blue-400/30 hover:bg-white/10 hover:shadow-lg hover:shadow-blue-500/10"
+                  className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-left backdrop-blur-sm transition-all duration-300 hover:border-blue-400/30 hover:bg-white/10 hover:shadow-lg hover:shadow-blue-500/10 select-text"
                 >
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300 group-hover:scale-110 transition-transform duration-300">
                     <item.icon size={16} />
