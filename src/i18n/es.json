@@ -124,13 +124,13 @@
     "techDesc": "infraestructura, cloud y AI"
   },
   "experience": {
-    "sectionBadge": "Career",
-    "sectionHeadingPrefix": "A career built at the intersection of",
-    "sectionHeadingGradient": "operations and product",
-    "sectionDescription": "I combine day-to-day IT reliability with hands-on software delivery, turning support knowledge into cleaner systems, better tooling, and shipped product work.",
-    "snapshotLabel": "Career Snapshot",
-    "snapshotTitle": "What I bring to a team",
-    "snapshotBadge": "Real-world execution",
+    "sectionBadge": "Carrera",
+    "sectionHeadingPrefix": "Una carrera construida en la intersección entre",
+    "sectionHeadingGradient": "operaciones y producto",
+    "sectionDescription": "Combino la confiabilidad del TI del día a día con la entrega práctica de software, convirtiendo el conocimiento de soporte en sistemas más limpios, mejores herramientas y trabajo de producto publicado.",
+    "snapshotLabel": "Resumen profesional",
+    "snapshotTitle": "Lo que aporto a un equipo",
+    "snapshotBadge": "Ejecución en el mundo real",
     "snapshot": {
       "yearsLabel": "Años de experiencia",
       "yearsValue": "3+",
@@ -141,44 +141,44 @@
       "securityLabel": "Seguridad primero",
       "securityValue": "Sí"
     },
-    "workingStyleLabel": "Working style",
-    "workingStyleText": "I move comfortably between tickets, architecture, and implementation. That means I can troubleshoot the production issue, improve the underlying workflow, and leave the system easier to maintain than I found it.",
-    "focusLabel": "Current focus",
-    "focusTitle": "Support today, build for tomorrow",
+    "workingStyleLabel": "Estilo de trabajo",
+    "workingStyleText": "Me muevo con soltura entre tickets, arquitectura e implementación. Puedo diagnosticar el problema de producción, mejorar el flujo de trabajo subyacente y dejar el sistema más fácil de mantener de lo que lo encontré.",
+    "focusLabel": "Enfoque actual",
+    "focusTitle": "Soporte hoy, construir para mañana",
     "focusPoints": [
-      "Keeping school systems stable, secure, and easy to use.",
-      "Shipping internal tools that save time for staff and users.",
-      "Designing infrastructure with automation and maintainability in mind."
+      "Mantener los sistemas escolares estables, seguros y fáciles de usar.",
+      "Desarrollar herramientas internas que ahorran tiempo al personal y a los usuarios.",
+      "Diseñar infraestructura pensando en la automatización y el mantenimiento."
     ],
-    "outcomeLabel": "Featured outcome",
+    "outcomeLabel": "Resultado destacado",
     "outcomeTitle": "Facturd",
-    "outcomeDescription": "My most complete application so far: a full invoicing platform with a stronger product scope, polished workflows, and the kind of structure that shows the widest range of my software and systems work.",
-    "timelineLabel": "Timeline",
-    "timelineTitle": "Professional experience",
-    "timelineDescription": "Two parallel tracks that feed each other: operational discipline and product delivery.",
-    "currentChapter": "Current chapter",
+    "outcomeDescription": "Mi aplicación más completa hasta ahora: una plataforma de facturación integral con un alcance de producto más amplio, flujos de trabajo pulidos y el tipo de estructura que muestra la mayor variedad de mi trabajo en software y sistemas.",
+    "timelineLabel": "Línea de tiempo",
+    "timelineTitle": "Experiencia profesional",
+    "timelineDescription": "Dos trayectorias paralelas que se retroalimentan: disciplina operativa y entrega de producto.",
+    "currentChapter": "Capítulo actual",
     "job0": {
-      "role": "IT Support Specialist",
-      "period": "Jul 2025 – Present",
-      "summary": "Own frontline support while keeping the network, identity, and endpoint stack healthy for a fast-moving school environment.",
+      "role": "Especialista en Soporte de TI",
+      "period": "Jul 2025 – Actualidad",
+      "summary": "A cargo del soporte de primera línea mientras mantengo saludable la red, la identidad y el stack de endpoints en un entorno escolar ágil.",
       "bullets": [
-        "Frontline technical support for 200+ faculty, staff, and students across hardware, software, and network issues.",
-        "Manage Fortinet FortiGate firewalls: VLAN segmentation, MSS clamping, VPN tunnels, firewall policies, and traffic shaping.",
-        "Administer Active Directory: user/group management, GPO, organizational units, and account lifecycle.",
-        "Deploy and maintain endpoint management via ManageEngine Endpoint Central and ServiceDesk."
+        "Soporte técnico de primera línea para más de 200 docentes, personal y estudiantes en hardware, software y problemas de red.",
+        "Administración de firewalls Fortinet FortiGate: segmentación VLAN, MSS clamping, túneles VPN, políticas de firewall y traffic shaping.",
+        "Administración de Active Directory: gestión de usuarios/grupos, GPO, unidades organizativas y ciclo de vida de cuentas.",
+        "Despliegue y mantenimiento de la gestión de endpoints mediante ManageEngine Endpoint Central y ServiceDesk."
       ],
       "company": "Carol Morgan School",
-      "location": "Santo Domingo, DR"
+      "location": "Santo Domingo, RD"
     },
     "job1": {
-      "role": "Full-Stack Developer & Software Architect",
-      "period": "2022 – Present",
-      "summary": "Design and ship production applications across web, mobile, and automation, from real-time collaboration tools to game systems.",
+      "role": "Desarrollador Full-Stack y Arquitecto de Software",
+      "period": "2022 – Actualidad",
+      "summary": "Diseño y pongo en producción aplicaciones en web, móvil y automatización, desde herramientas de colaboración en tiempo real hasta sistemas de juego.",
       "bullets": [
-        "Digital Signage Platform: Fastify 5 + React + PostgreSQL + Docker, WebSocket real-time pairing, Redis caching, MinIO S3, JWT auth.",
-        "Mini Studio Web: Multi-track audio DAW with Flutter + Web Audio API, waveform rendering, PCM WAV export, Firebase backend.",
-        "NoraHR: Production Kanban system (React + Firebase) with Gantt charts, SLA tracking, real-time chat, CI/CD via GitHub Actions.",
-        "AI Video Pipeline: n8n-orchestrated automation with OpenAI/Gemini APIs and reusable content workflows."
+        "Plataforma de señalización digital: Fastify 5 + React + PostgreSQL + Docker, emparejamiento en tiempo real con WebSocket, caché con Redis, MinIO S3 y autenticación JWT.",
+        "Mini Studio Web: DAW de audio multipista con Flutter + Web Audio API, renderizado de formas de onda, exportación PCM WAV y backend con Firebase.",
+        "NoraHR: sistema Kanban de producción (React + Firebase) con diagramas de Gantt, seguimiento SLA, chat en tiempo real y CI/CD mediante GitHub Actions.",
+        "Pipeline de video con IA: automatización orquestada con n8n, APIs de OpenAI/Gemini y flujos de trabajo de contenido reutilizables."
       ],
       "company": "Independiente",
       "location": "Remoto"
