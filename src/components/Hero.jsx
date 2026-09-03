@@ -29,7 +29,7 @@ const headline = ['IT Operations', 'Business Software Developer', 'AI Automation
 
 const contactLinks = [
   { label: 'Email', value: 'norascript@gmail.com', href: 'mailto:norascript@gmail.com', icon: Mail },
-  { label: 'Phone', value: '809-943-1727', href: 'tel:18099431727', icon: Phone },
+  { label: 'Phone', value: '829-578-6284', href: 'tel:18295786284', icon: Phone },
   {
     label: 'Location',
     value: 'Santo Domingo, DR',

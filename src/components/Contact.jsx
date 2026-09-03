@@ -11,7 +11,7 @@ const LinkedinIcon = ({ size = 18 }) => (
 
 const methods = [
   { icon: Mail, label: 'Email', value: 'norascript@gmail.com', href: 'mailto:norascript@gmail.com' },
-  { icon: Phone, label: 'Teléfono', value: '809-943-1727', href: 'tel:18099431727' },
+  { icon: Phone, label: 'Teléfono', value: '829-578-6284', href: 'tel:18295786284' },
   {
     icon: MapPin,
     label: 'Ubicación',
