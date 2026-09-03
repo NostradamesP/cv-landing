@@ -69,7 +69,7 @@ export default function Contact() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-30px' }}
-            className="mt-8 grid sm:grid-cols-3 gap-3"
+            className="mt-8 grid sm:grid-cols-3 gap-4"
           >
             {methods.map(({ icon: Icon, label, value, href }) => (
               <motion.a
@@ -79,7 +79,7 @@ export default function Contact() {
                 href={href}
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-accent/30 hover:bg-white hover:shadow-lg transition-all duration-300"
+                className="group rounded-2xl border border-slate-200 bg-slate-50 px-6 py-6 hover:border-accent/30 hover:bg-white hover:shadow-lg transition-all duration-300"
               >
                 <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-blue-500 text-white shadow-lg shadow-blue-500/25 group-hover:scale-110 transition-transform duration-300">
                   <Icon size={18} />
@@ -87,7 +87,7 @@ export default function Contact() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
                   {label}
                 </p>
-                <p className="mt-1 text-sm font-bold text-slate-900 break-all">{value}</p>
+                <p className="mt-1 text-sm font-bold text-slate-900 break-words">{value}</p>
               </motion.a>
             ))}
           </motion.div>
