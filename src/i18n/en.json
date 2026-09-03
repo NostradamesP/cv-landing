@@ -28,7 +28,8 @@
     "contact": {
       "emailLabel": "Email",
       "phoneLabel": "Phone",
-      "locationLabel": "Location"
+      "locationLabel": "Location",
+      "locationValue": "Santo Domingo, DR"
     },
     "socials": {
       "description": "LinkedIn, GitHub and direct email"
@@ -158,6 +159,8 @@
     "currentChapter": "Current chapter",
     "job0": {
       "role": "IT Support Specialist",
+      "company": "Carol Morgan School",
+      "location": "Santo Domingo, DR",
       "period": "Jul 2025 – Present",
       "summary": "Own frontline support while keeping the network, identity, and endpoint stack healthy for a fast-moving school environment.",
       "bullets": [
@@ -169,6 +172,8 @@
     },
     "job1": {
       "role": "Full-Stack Developer & Software Architect",
+      "company": "Self-Employed",
+      "location": "Remote",
       "period": "2022 – Present",
       "summary": "Design and ship production applications across web, mobile, and automation, from real-time collaboration tools to game systems.",
       "bullets": [
@@ -340,5 +345,119 @@
     "copyright": "© {year} Eduardo Rojas Velasquez. All rights reserved.",
     "builtWith": "Built with",
     "usingStack": "using React + Tailwind"
+  },
+  "demos": {
+    "sectionBadge": "Live Demos",
+    "sectionHeading": "My projects {highlight}",
+    "sectionHighlight": "in action",
+    "sectionDescription": "Real systems in production — move kanban cards, generate an e-CF or browse sites deployed from their own domain.",
+    "kanban": {
+      "title": "Kanban IT · Operations",
+      "search": "Search task…",
+      "progress": "Progress",
+      "noTasks": "No tasks",
+      "demoHint": "Interactive demo — click a card to move it to the next column (real dnd in the app)",
+      "status": {
+        "pending": "Pending",
+        "inProgress": "In progress",
+        "blocked": "Blocked",
+        "done": "Done"
+      },
+      "priority": {
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "module": {
+        "security": "Security",
+        "infra": "Infrastructure",
+        "ai": "AI",
+        "reports": "Reports"
+      },
+      "tasks": {
+        "k1": "Configure FortiGate site-to-site VPN",
+        "k2": "Active Directory migration to DC2",
+        "k3": "n8n automated reports pipeline",
+        "k4": "Deploy SLA dashboard to production",
+        "k5": "RBAC roles audit (Users)",
+        "k6": "Client portal SSL certificates",
+        "k7": "Generate monthly incident report"
+      },
+      "urgency": {
+        "critical": "Critical",
+        "high": "High"
+      },
+      "due": {
+        "due": "Due {date}",
+        "overdue": "Overdue {date}",
+        "delivered": "Delivered {date}"
+      },
+      "clickToMove": "Click to move to next column"
+    },
+    "facturd": {
+      "nav": {
+        "dashboard": "Dashboard",
+        "invoices": "Invoices",
+        "design": "Design",
+        "clients": "Clients",
+        "suppliers": "Suppliers",
+        "inventory": "Inventory",
+        "collections": "Collections",
+        "expenses": "Expenses",
+        "reports": "Reports",
+        "company": "Company",
+        "support": "Support",
+        "logout": "Logout",
+        "brandSettings": "Brand settings"
+      },
+      "invoiceItems": {
+        "item1": "Electronic invoicing module e-CF",
+        "item2": "Monthly technical support",
+        "item3": "DGII configuration and digital signature"
+      },
+      "form": {
+        "newInvoice": "New invoice",
+        "subtitle": "Electronic fiscal receipt · NCF B02",
+        "saveDraft": "Save draft",
+        "saveAndIssue": "Save and issue"
+      },
+      "ecf": {
+        "title": "e-CF issuance",
+        "description": "Electronic fiscal receipt generation with digital signature and DGII stamping.",
+        "generated": "e-CF issued correctly",
+        "generate": "Generate e-CF (demo)",
+        "approved": "Receipt approved"
+      },
+      "kardex": {
+        "title": "FIFO Kardex · Inventory",
+        "laptop": "Dell Latitude Laptop",
+        "monitor": "24\" Monitor",
+        "switch": "24-port Switch",
+        "available": "{n} avail."
+      }
+    },
+    "websites": {
+      "open": "Open",
+      "loading": "Loading {name}…",
+      "demoHint": "Live demo — each site is loaded directly from its production domain",
+      "fallback": {
+        "title": "Audiovisual production company (LED screens, sound, lighting and CCTV).",
+        "description": "The site blocks iframe embedding for security, so open it in a new tab to see the live demo.",
+        "openButton": "Open eventpro.com.do"
+      },
+      "services": {
+        "led": "LED Screens",
+        "sound": "Sound",
+        "lighting": "Lighting",
+        "cctv": "CCTV"
+      }
+    },
+    "signage": {
+      "loading": "Loading Nora Signage Portal…",
+      "description": "real digital signage landing (SaaS and local) loaded live"
+    },
+    "footer": {
+      "interactive": "Interactive demos of production systems"
+    }
   }
 }

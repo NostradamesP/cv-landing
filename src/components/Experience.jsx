@@ -2,13 +2,6 @@ import { motion } from 'framer-motion'
 import { Calendar, Briefcase, ShieldCheck, Rocket, Users, Layers3, ArrowRight } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 
-const careerSnapshot = [
-  { label: 'Years shipping', value: '3+', icon: Rocket },
-  { label: 'Daily users supported', value: '200+', icon: Users },
-  { label: 'Core environments', value: 'IT + Product', icon: Layers3 },
-  { label: 'Security-first', value: 'Yes', icon: ShieldCheck },
-]
-
 const bulletVariants = {
   hidden: { opacity: 0, x: -12 },
   visible: (i) => ({
@@ -42,11 +35,18 @@ function SnapshotCard({ item }) {
 export default function Experience() {
   const { t } = useLanguage()
 
+  const careerSnapshot = [
+    { label: t('experience.snapshot.yearsLabel'), value: t('experience.snapshot.yearsValue'), icon: Rocket },
+    { label: t('experience.snapshot.usersLabel'), value: t('experience.snapshot.usersValue'), icon: Users },
+    { label: t('experience.snapshot.envLabel'), value: t('experience.snapshot.envValue'), icon: Layers3 },
+    { label: t('experience.snapshot.securityLabel'), value: t('experience.snapshot.securityValue'), icon: ShieldCheck },
+  ]
+
   const experiences = [
     {
       role: t('experience.job0.role'),
-      company: 'Carol Morgan School',
-      location: 'Santo Domingo, DR',
+      company: t('experience.job0.company'),
+      location: t('experience.job0.location'),
       period: t('experience.job0.period'),
       summary: t('experience.job0.summary'),
       bullets: [
@@ -59,8 +59,8 @@ export default function Experience() {
     },
     {
       role: t('experience.job1.role'),
-      company: 'Self-Employed',
-      location: 'Remote',
+      company: t('experience.job1.company'),
+      location: t('experience.job1.location'),
       period: t('experience.job1.period'),
       summary: t('experience.job1.summary'),
       bullets: [

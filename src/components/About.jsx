@@ -99,10 +99,10 @@ export default function About() {
               </h3>
               <div className="space-y-3.5 text-sm">
                 {[
-                  [t('about.quickFacts.location'), 'Santo Domingo, DR'],
+                  [t('about.quickFacts.location'), t('contact.locationValue')],
                   [t('about.quickFacts.email'), 'norascript@gmail.com'],
-                  [t('about.quickFacts.phone'), '809-943-1727'],
-                  [t('about.quickFacts.languages'), 'Espanol · English'],
+                  [t('about.quickFacts.phone'), '829-578-6284'],
+                  [t('about.quickFacts.languages'), 'Español · English'],
                 ].map(([label, value], i) => (
                   <motion.div
                     key={label}

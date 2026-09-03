@@ -50,7 +50,7 @@ export default function Hero() {
     { label: t('hero.contact.phoneLabel'), value: '829-578-6284', href: 'tel:18295786284', icon: Phone },
     {
       label: t('hero.contact.locationLabel'),
-      value: 'Santo Domingo, DR',
+      value: t('hero.contact.locationValue'),
       href: 'https://www.google.com/maps/search/Santo+Domingo,+Dominican+Republic',
       icon: MapPin,
     },

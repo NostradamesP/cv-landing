@@ -28,7 +28,8 @@
     "contact": {
       "emailLabel": "Email",
       "phoneLabel": "Phone",
-      "locationLabel": "Location"
+      "locationLabel": "Location",
+      "locationValue": "Santo Domingo, DR"
     },
     "socials": {
       "description": "LinkedIn, GitHub y email directo"
@@ -131,14 +132,14 @@
     "snapshotTitle": "What I bring to a team",
     "snapshotBadge": "Real-world execution",
     "snapshot": {
-      "yearsLabel": "Years shipping",
+      "yearsLabel": "Años de experiencia",
       "yearsValue": "3+",
-      "usersLabel": "Daily users supported",
+      "usersLabel": "Usuarios diarios soportados",
       "usersValue": "200+",
-      "envLabel": "Core environments",
-      "envValue": "IT + Product",
-      "securityLabel": "Security-first",
-      "securityValue": "Yes"
+      "envLabel": "Entornos principales",
+      "envValue": "IT + Producto",
+      "securityLabel": "Seguridad primero",
+      "securityValue": "Sí"
     },
     "workingStyleLabel": "Working style",
     "workingStyleText": "I move comfortably between tickets, architecture, and implementation. That means I can troubleshoot the production issue, improve the underlying workflow, and leave the system easier to maintain than I found it.",
@@ -165,7 +166,9 @@
         "Manage Fortinet FortiGate firewalls: VLAN segmentation, MSS clamping, VPN tunnels, firewall policies, and traffic shaping.",
         "Administer Active Directory: user/group management, GPO, organizational units, and account lifecycle.",
         "Deploy and maintain endpoint management via ManageEngine Endpoint Central and ServiceDesk."
-      ]
+      ],
+      "company": "Carol Morgan School",
+      "location": "Santo Domingo, DR"
     },
     "job1": {
       "role": "Full-Stack Developer & Software Architect",
@@ -176,7 +179,9 @@
         "Mini Studio Web: Multi-track audio DAW with Flutter + Web Audio API, waveform rendering, PCM WAV export, Firebase backend.",
         "NoraHR: Production Kanban system (React + Firebase) with Gantt charts, SLA tracking, real-time chat, CI/CD via GitHub Actions.",
         "AI Video Pipeline: n8n-orchestrated automation with OpenAI/Gemini APIs and reusable content workflows."
-      ]
+      ],
+      "company": "Independiente",
+      "location": "Remoto"
     }
   },
   "projects": {
@@ -340,5 +345,119 @@
     "copyright": "© {year} Eduardo Rojas Velasquez. All rights reserved.",
     "builtWith": "Built with",
     "usingStack": "using React + Tailwind"
+  },
+  "demos": {
+    "sectionBadge": "Demos en vivo",
+    "sectionHeading": "Mis proyectos {highlight}",
+    "sectionHighlight": "en acción",
+    "sectionDescription": "Sistemas reales en producción — mueve tarjetas en el kanban, genera un e-CF o navega los sitios desplegados desde su propio dominio.",
+    "kanban": {
+      "title": "Kanban IT · Operaciones",
+      "search": "Buscar tarea…",
+      "progress": "Progreso",
+      "noTasks": "Sin tareas",
+      "demoHint": "Demo interactiva — haz click en una tarjeta para avanzarla de columna (dnd real en la app)",
+      "status": {
+        "pending": "Pendiente",
+        "inProgress": "En progreso",
+        "blocked": "Bloqueado",
+        "done": "Hecho"
+      },
+      "priority": {
+        "high": "Alta",
+        "medium": "Media",
+        "low": "Baja"
+      },
+      "module": {
+        "security": "Seguridad",
+        "infra": "Infraestructura",
+        "ai": "IA",
+        "reports": "Reportes"
+      },
+      "tasks": {
+        "k1": "Configurar FortiGate VPN site-to-site",
+        "k2": "Migración Active Directory a DC2",
+        "k3": "Pipeline n8n de reportes automáticos",
+        "k4": "Desplegar dashboard SLA a producción",
+        "k5": "Auditoría de roles RBAC (Usuarios)",
+        "k6": "Certificados SSL del portal cliente",
+        "k7": "Generar reporte mensual de incidencias"
+      },
+      "urgency": {
+        "critical": "Crítica",
+        "high": "Alta"
+      },
+      "due": {
+        "due": "Vence {date}",
+        "overdue": "Vencido {date}",
+        "delivered": "Entregado {date}"
+      },
+      "clickToMove": "Click para mover a la siguiente columna"
+    },
+    "facturd": {
+      "nav": {
+        "dashboard": "Dashboard",
+        "invoices": "Facturas",
+        "design": "Diseño",
+        "clients": "Clientes",
+        "suppliers": "Proveedores",
+        "inventory": "Inventario",
+        "collections": "Cobros",
+        "expenses": "Gastos",
+        "reports": "Reportes",
+        "company": "Empresa",
+        "support": "Soporte",
+        "logout": "Salir",
+        "brandSettings": "Ajustes de marca"
+      },
+      "invoiceItems": {
+        "item1": "Módulo facturación electrónica e-CF",
+        "item2": "Soporte técnico mensual",
+        "item3": "Configuración DGII y firma digital"
+      },
+      "form": {
+        "newInvoice": "Factura nueva",
+        "subtitle": "Comprobante fiscal electrónico · NCF B02",
+        "saveDraft": "Guardar borrador",
+        "saveAndIssue": "Guardar y emitir"
+      },
+      "ecf": {
+        "title": "Emisión de e-CF",
+        "description": "Generación del comprobante fiscal electrónico con firma y timbrado ante la DGII.",
+        "generated": "e-CF emitido correctamente",
+        "generate": "Generar e-CF (demo)",
+        "approved": "Comprobante aprobado"
+      },
+      "kardex": {
+        "title": "Kardex FIFO · Inventario",
+        "laptop": "Laptop Dell Latitude",
+        "monitor": "Monitor 24\"",
+        "switch": "Switch 24 puertos",
+        "available": "{n} disp."
+      }
+    },
+    "websites": {
+      "open": "Abrir",
+      "loading": "Cargando {name}…",
+      "demoHint": "Demo en vivo — cada sitio se carga directamente desde su dominio de producción",
+      "fallback": {
+        "title": "Empresa de producción audiovisual (pantallas LED, sonido, iluminación y CCTV).",
+        "description": "El sitio bloquea la incrustación en marcos por seguridad, así que ábrelo en una pestaña nueva para ver la demo en vivo.",
+        "openButton": "Abrir eventpro.com.do"
+      },
+      "services": {
+        "led": "Pantallas LED",
+        "sound": "Sonido",
+        "lighting": "Iluminación",
+        "cctv": "CCTV"
+      }
+    },
+    "signage": {
+      "loading": "Cargando Nora Signage Portal…",
+      "description": "landing real de señalización digital (SaaS y local) cargada en vivo"
+    },
+    "footer": {
+      "interactive": "Demos interactivas de los sistemas en producción"
+    }
   }
 }

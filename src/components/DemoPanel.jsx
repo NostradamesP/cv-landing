@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useLanguage } from '../i18n/LanguageContext'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Kanban, FileText, Monitor, Radio, Check, BadgeCheck,
@@ -73,7 +74,7 @@ function TaskCard({ task, onAdvance }) {
       whileHover={{ y: -1 }}
       whileTap={{ scale: 0.98 }}
       onClick={() => onAdvance(task.id)}
-      title="Click para mover a la siguiente columna"
+      title={t('demos.kanban.clickToMove')}
       className="w-full rounded-lg border border-slate-200 bg-white p-2.5 text-left shadow-sm transition-colors hover:border-cyan-300 hover:shadow-md"
     >
       <h3 className="flex items-start gap-1 text-xs font-bold leading-snug text-slate-950">
@@ -149,6 +150,7 @@ function TaskCard({ task, onAdvance }) {
 const columnProgress = { Pendiente: 0, 'En progreso': 55, Bloqueado: 15, Hecho: 100 }
 
 function KanbanDemo() {
+  const { t } = useLanguage()
   const [board, setBoard] = useState(STATUS_ORDER.map((s) => ({ status: s, tasks: initialTasks.filter((t) => t.col === s) })))
 
   const moveTask = (taskId) => {
@@ -179,7 +181,7 @@ function KanbanDemo() {
           </span>
           <div>
             <p className="text-sm font-extrabold text-slate-800 leading-tight">NoraHR</p>
-            <p className="text-[10px] text-slate-400 leading-tight">Kanban IT · Operaciones</p>
+            <p className="text-[10px] text-slate-400 leading-tight">{t('demos.kanban.title')}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -187,7 +189,7 @@ function KanbanDemo() {
             <Search size={13} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               value=""
-              placeholder="Buscar tarea…"
+              placeholder={t('demos.kanban.search')}
               readOnly
               className="w-44 rounded-lg border border-slate-200 bg-slate-50 py-1.5 pl-8 pr-3 text-xs text-slate-500 outline-none"
             />
@@ -225,7 +227,7 @@ function KanbanDemo() {
                 </div>
                 <div className="px-3">
                   <div className="mb-1 flex justify-between text-[10px] text-slate-400">
-                    <span>Progreso</span>
+                    <span>{t('demos.kanban.progress')}</span>
                     <span>{columnProgress[col.status]}%</span>
                   </div>
                   <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
@@ -244,7 +246,7 @@ function KanbanDemo() {
                       <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100">
                         <Plus size={18} className="text-slate-300" />
                       </div>
-                      <p className="text-xs font-semibold text-slate-400">Sin tareas</p>
+                      <p className="text-xs font-semibold text-slate-400">{t('demos.kanban.noTasks')}</p>
                     </div>
                   )}
                 </div>
@@ -256,7 +258,7 @@ function KanbanDemo() {
 
       <p className="flex items-center gap-1.5 border-t border-slate-200 bg-white px-4 py-2 text-[11px] text-slate-500">
         <Radio size={11} className="text-emerald-500" />
-        Demo interactiva — haz click en una tarjeta para avanzarla de columna (dnd real en la app)
+        {t('demos.kanban.demoHint')}
       </p>
     </div>
   )
@@ -286,6 +288,7 @@ const invoiceItems = [
 const fm = (n) => `RD$ ${n.toLocaleString('es-DO', { minimumFractionDigits: 2 })}`
 
 function FacturdSidebar() {
+  const { t } = useLanguage()
   return (
     <aside className="hidden w-52 shrink-0 flex-col border-r border-[#d5dfe6] bg-[#e8eff3] py-4 sm:flex">
       <div className="mb-5 px-5">
@@ -319,16 +322,16 @@ function FacturdSidebar() {
       <div className="mt-auto flex flex-col gap-y-0.5 px-3">
         <button className="flex items-center gap-3.5 rounded-lg px-4 py-2.5 text-sm font-medium text-[#5b6b74] hover:bg-white/60 hover:text-[#2a3439]">
           <LifeBuoy size={16} />
-          Soporte
+          {t('demos.facturd.nav.support')}
         </button>
         <button className="flex items-center gap-3.5 rounded-lg px-4 py-2.5 text-sm font-medium text-[#5b6b74] hover:bg-white/60 hover:text-[#2a3439]">
           <LogOut size={16} />
-          Salir
+          {t('demos.facturd.nav.logout')}
         </button>
         <div className="mt-2 rounded-xl border border-[#d5dfe6] bg-[#eef3f6] p-3">
           <p className="mb-2 flex items-center gap-2 text-xs font-bold text-[#2a3439]">
             <Palette size={13} className="text-[#0056d2]" />
-            Ajustes de marca
+            {t('demos.facturd.nav.brandSettings')}
           </p>
           <div className="flex items-center gap-1.5">
             {['#0056d2', '#f7f9fb', '#e8eff3', '#2a3439'].map((c) => (
@@ -545,6 +548,7 @@ const templates = [
 ]
 
 function FacturdDemo() {
+  const { t } = useLanguage()
   const [template, setTemplate] = useState('classic')
   const [generated, setGenerated] = useState(false)
 
@@ -557,15 +561,15 @@ function FacturdDemo() {
           {/* Page header */}
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
             <div>
-              <h2 className="text-xl font-extrabold text-[#2a3439]">Factura nueva</h2>
-              <p className="text-xs text-[#5b6b74]">Comprobante fiscal electrónico · NCF B02</p>
+              <h2 className="text-xl font-extrabold text-[#2a3439]">{t('demos.facturd.form.newInvoice')}</h2>
+              <p className="text-xs text-[#5b6b74]">{t('demos.facturd.form.subtitle')}</p>
             </div>
             <div className="flex items-center gap-2">
               <button className="rounded-lg border border-[#d5dfe6] bg-white px-3.5 py-2 text-xs font-bold text-[#2a3439] shadow-sm">
-                Guardar borrador
+                {t('demos.facturd.form.saveDraft')}
               </button>
               <button className="rounded-lg bg-[#0056d2] px-3.5 py-2 text-xs font-bold text-white shadow-sm">
-                Guardar y emitir
+                {t('demos.facturd.form.saveAndIssue')}
               </button>
             </div>
           </div>
@@ -609,10 +613,10 @@ function FacturdDemo() {
               <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                 <p className="mb-1 flex items-center gap-2 text-sm font-bold text-[#2a3439]">
                   <BadgeCheck size={15} className="text-[#0056d2]" />
-                  Emisión de e-CF
+                  {t('demos.facturd.ecf.title')}
                 </p>
                 <p className="mb-3 text-[11.5px] leading-relaxed text-slate-500">
-                  Generación del comprobante fiscal electrónico con firma y timbrado ante la DGII.
+                  {t('demos.facturd.ecf.description')}
                 </p>
                 <button
                   onClick={() => setGenerated(true)}
@@ -622,7 +626,7 @@ function FacturdDemo() {
                       : 'bg-[#0056d2] text-white shadow-sm hover:bg-[#0046ad]'
                   }`}
                 >
-                  {generated ? 'e-CF emitido correctamente' : 'Generar e-CF (demo)'}
+                  {generated ? t('demos.facturd.ecf.generated') : t('demos.facturd.ecf.generate')}
                 </button>
                 <AnimatePresence>
                   {generated && (
@@ -634,7 +638,7 @@ function FacturdDemo() {
                     >
                       <p className="mb-1 flex items-center gap-1.5 text-xs font-bold text-emerald-600">
                         <Check size={13} />
-                        Comprobante aprobado
+                        {t('demos.facturd.ecf.approved')}
                       </p>
                       <p className="font-mono text-[10.5px] text-emerald-700/80">
                         E310000000001 · Timbrado: 12:41:03
@@ -647,7 +651,7 @@ function FacturdDemo() {
               <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                 <p className="mb-3 flex items-center gap-2 text-sm font-bold text-[#2a3439]">
                   <Boxes size={15} className="text-[#0056d2]" />
-                  Kardex FIFO · Inventario
+                  {t('demos.facturd.kardex.title')}
                 </p>
                 <div className="space-y-2.5">
                   {[
@@ -686,6 +690,7 @@ const signageSite = {
 }
 
 function SignageDemo() {
+  const { t } = useLanguage()
   const [loaded, setLoaded] = useState(false)
 
   return (
@@ -707,14 +712,14 @@ function SignageDemo() {
             className="flex items-center gap-1 rounded-md border border-slate-200 bg-white px-2 py-1 text-[10px] font-bold text-slate-600 transition-colors hover:text-accent"
           >
             <ExternalLink size={10} />
-            Abrir
+            {t('demos.websites.open')}
           </a>
         </div>
         <div className="relative h-[560px] bg-slate-50">
           {!loaded && (
             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-slate-50">
               <Loader2 size={26} className="animate-spin text-accent" />
-              <p className="text-xs font-semibold text-slate-400">Cargando Nora Signage Portal…</p>
+              <p className="text-xs font-semibold text-slate-400">{t('demos.signage.loading')}</p>
             </div>
           )}
           <iframe
@@ -730,7 +735,7 @@ function SignageDemo() {
 
       <p className="mt-3 flex items-center gap-1.5 text-[11px] text-slate-500">
         <Radio size={11} className="text-emerald-400" />
-        {signageSite.name} — landing real de señalización digital (SaaS y local) cargada en vivo
+        {signageSite.name} — {t('demos.signage.description')}
       </p>
     </div>
   )
@@ -801,9 +806,7 @@ function WebsiteFallback({ site }) {
       <h4 className="text-lg font-extrabold text-white">Event Pro Jinaite</h4>
       <p className="mt-1 font-mono text-xs text-slate-400">eventpro.com.do</p>
       <p className="mt-3 max-w-md text-xs leading-relaxed text-slate-300">
-        Empresa de producción audiovisual (pantallas LED, sonido, iluminación y CCTV).
-        El sitio bloquea la incrustación en marcos por seguridad, así que ábrelo en una
-        pestaña nueva para ver la demo en vivo.
+        {t('demos.websites.fallback.title')} {t('demos.websites.fallback.description')}
       </p>
       <div className="mt-4 flex flex-wrap justify-center gap-1.5">
         {site.services.map((s) => (
@@ -818,7 +821,7 @@ function WebsiteFallback({ site }) {
         rel="noopener noreferrer"
         className={`mt-5 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r ${site.tone} px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-rose-500/25 transition-transform hover:scale-[1.02]`}
       >
-        Abrir eventpro.com.do
+        {t('demos.websites.fallback.openButton')}
         <ExternalLink size={13} />
       </a>
     </div>
@@ -826,6 +829,7 @@ function WebsiteFallback({ site }) {
 }
 
 function WebsitesDemo() {
+  const { t } = useLanguage()
   const [site, setSite] = useState(liveSites[0])
   const [loaded, setLoaded] = useState(false)
 
@@ -873,7 +877,7 @@ function WebsitesDemo() {
             className="flex items-center gap-1 rounded-md border border-slate-200 bg-white px-2 py-1 text-[10px] font-bold text-slate-600 transition-colors hover:text-accent"
           >
             <ExternalLink size={10} />
-            Abrir
+            {t('demos.websites.open')}
           </a>
         </div>
 
@@ -882,7 +886,7 @@ function WebsitesDemo() {
             {!loaded && (
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-slate-50">
                 <Loader2 size={26} className="animate-spin text-accent" />
-                <p className="text-xs font-semibold text-slate-400">Cargando {site.name}…</p>
+                <p className="text-xs font-semibold text-slate-400">{t('demos.websites.loading', { name: site.name })}</p>
               </div>
             )}
             <iframe
@@ -901,7 +905,7 @@ function WebsitesDemo() {
 
       <p className="mt-3 flex items-center gap-1.5 text-[11px] text-slate-500">
         <Radio size={11} className="text-emerald-400" />
-        Demo en vivo — cada sitio se carga directamente desde su dominio de producción
+        {t('demos.websites.demoHint')}
       </p>
     </div>
   )
@@ -909,6 +913,7 @@ function WebsitesDemo() {
 
 
 export default function DemoPanel() {
+  const { t } = useLanguage()
   const [active, setActive] = useState('kanban')
   const activeTab = tabs.find((t) => t.id === active)
 
@@ -949,10 +954,10 @@ export default function DemoPanel() {
               transition={{ duration: 1.5, repeat: Infinity }}
               className="h-1.5 w-1.5 rounded-full bg-emerald-400"
             />
-            Demos en vivo
+            {t('demos.sectionBadge')}
           </motion.span>
           <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
-            Mis proyectos <span className="gradient-text">en acción</span>
+            {t('demos.sectionHeading').replace('{highlight}', '')}<span className="gradient-text">{t('demos.sectionHighlight')}</span>
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-slate-400">
             Sistemas reales en producción — mueve tarjetas en el kanban, genera un e-CF o navega
