@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
 import { Rocket, Boxes, Layers3, Cpu } from 'lucide-react'
+import { useLanguage } from '../i18n/LanguageContext'
 
-const stats = [
-  { icon: Rocket, label: 'Años de experiencia', value: '3+', desc: 'IT + desarrollo de producto' },
-  { icon: Boxes, label: 'Proyectos en producción', value: '9+', desc: 'web, mobile y automatización' },
-  { icon: Layers3, label: 'Sistemas desarrollados', value: '15+', desc: 'portales, dashboards y plataformas' },
-  { icon: Cpu, label: 'Tecnologías', value: '20+', desc: 'infraestructura, cloud y AI' },
+const statKeys = [
+  { icon: Rocket, value: '3+' },
+  { icon: Boxes, value: '9+' },
+  { icon: Layers3, value: '15+' },
+  { icon: Cpu, value: '20+' },
 ]
 
 const cardVariants = {
@@ -14,13 +15,15 @@ const cardVariants = {
 }
 
 export default function QuickStats() {
+  const { t } = useLanguage()
+
   return (
     <section id="stats" className="section-padding bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {stats.map(({ icon: Icon, label, value, desc }, i) => (
+          {statKeys.map(({ icon: Icon, value }, i) => (
             <motion.div
-              key={label}
+              key={value}
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
@@ -34,9 +37,9 @@ export default function QuickStats() {
               </div>
               <p className="text-3xl font-black text-slate-900">{value}</p>
               <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-                {label}
+                {t(`stats.${i === 0 ? 'expLabel' : i === 1 ? 'projectsLabel' : i === 2 ? 'systemsLabel' : 'techLabel'}`)}
               </p>
-              <p className="mt-1.5 text-[11px] text-slate-400">{desc}</p>
+              <p className="mt-1.5 text-[11px] text-slate-400">{t(`stats.${i === 0 ? 'expDesc' : i === 1 ? 'projectsDesc' : i === 2 ? 'systemsDesc' : 'techDesc'}`)}</p>
             </motion.div>
           ))}
         </div>

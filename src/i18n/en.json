@@ -1,0 +1,344 @@
+﻿{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "expertise": "Expertise",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "downloadCv": "Download CV"
+  },
+  "lang": {
+    "switchTo": "English"
+  },
+  "hero": {
+    "role1": "IT Support Specialist",
+    "role2": "Full-Stack Developer",
+    "role3": "Software Architect",
+    "role4": "Automation Engineer",
+    "headline1": "IT Operations",
+    "headline2": "Business Software Developer",
+    "headline3": "AI Automation",
+    "badge": "Available for opportunities",
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Contact Me",
+      "downloadCv": "Download CV"
+    },
+    "contact": {
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "locationLabel": "Location"
+    },
+    "socials": {
+      "description": "LinkedIn, GitHub and direct email"
+    },
+    "terminal": {
+      "label1": "IT Operations",
+      "label2": "Business Software",
+      "label3": "AI Automation"
+    },
+    "stat": {
+      "devices": "Devices",
+      "inProduction": "In production",
+      "years": "Years in IT",
+      "tech": "Technologies"
+    },
+    "floatingBadge": "AI Automation"
+  },
+  "about": {
+    "sectionLabel": "About Me",
+    "heading": "From infrastructure to AI-powered development",
+    "paragraph1": "My path started in live event audiovisual technology — LED, sound, cameras and setup — where I learned that the system has to work live. From there I moved to IT Support Specialist at Carol Morgan School, managing 200+ devices, Fortinet firewalls, Active Directory and ManageEngine endpoints.",
+    "paragraph2": "In parallel I built production business products: billing systems, operational kanban, portals and platforms with React, Flutter, Fastify and PostgreSQL, deployed on Firebase, Supabase and Cloudflare. Today I combine IT operations discipline with software development and AI automation to solve real business problems.",
+    "quickFacts": {
+      "title": "Quick Facts",
+      "location": "📍 Location",
+      "email": "📧 Email",
+      "phone": "📞 Phone",
+      "languages": "🌐 Languages"
+    },
+    "highlight": {
+      "networkingLabel": "Fortinet & Networking",
+      "networkingDesc": "FortiGate, VLAN, VPN, MSS clamping",
+      "infraLabel": "Infrastructure",
+      "infraDesc": "Active Directory, ManageEngine, Mosyle MDM",
+      "cloudLabel": "Cloud Platforms",
+      "cloudDesc": "Firebase, Supabase, Cloudflare, Docker",
+      "fullstackLabel": "Full-Stack Dev",
+      "fullstackDesc": "Flutter, React, Fastify, PostgreSQL",
+      "securityLabel": "Security",
+      "securityDesc": "JWT, CSP, RBAC, OWASP, firewall policies",
+      "automationLabel": "Automation",
+      "automationDesc": "n8n workflows, Python, CI/CD, LLM pipelines"
+    }
+  },
+  "expertise": {
+    "sectionLabel": "Core Expertise",
+    "heading": "Four pillars, one professional",
+    "subtitle": "Infrastructure, business development, AI automation and live event technology",
+    "area1": {
+      "title": "IT Operations",
+      "desc": "Infrastructure and endpoint management: Fortinet, Active Directory, ManageEngine and Mosyle MDM.",
+      "points": ["FortiGate / VLAN / VPN", "Active Directory & GPO", "Endpoint & MDM", "Google Workspace Admin"]
+    },
+    "area2": {
+      "title": "Business Software Development",
+      "desc": "Production business systems: electronic invoicing, portals, kanban and multi-tenant platforms.",
+      "points": ["React / Flutter", "Fastify / Node.js", "PostgreSQL / Firebase", "Multi-tenant & RBAC"]
+    },
+    "area3": {
+      "title": "AI Automation",
+      "desc": "AI automation pipelines: n8n, OpenAI and Gemini APIs for content and data workflows.",
+      "points": ["n8n workflows", "OpenAI / Gemini", "Python scripting", "Video automation"]
+    },
+    "area4": {
+      "title": "Live Event Technology",
+      "desc": "Live audiovisual production: LED, sound, cameras and technical setup for events and companies.",
+      "points": ["LED Screens", "Sound & cameras", "Lighting", "Setup & troubleshooting"]
+    }
+  },
+  "skills": {
+    "sectionLabel": "Tech Stack",
+    "heading": "My Tech Stack",
+    "subtitle": "From firewall to deployment — a complete kit of infrastructure, cloud and development",
+    "category": {
+      "infra": "IT Infrastructure",
+      "cloud": "Cloud & BaaS",
+      "frontend": "Frontend",
+      "backend": "Backend & Databases",
+      "security": "Security & Networking",
+      "automation": "Automation & AI",
+      "gamedev": "Game Development"
+    }
+  },
+  "stats": {
+    "expLabel": "Years of experience",
+    "expDesc": "IT + product development",
+    "projectsLabel": "Projects in production",
+    "projectsDesc": "web, mobile and automation",
+    "systemsLabel": "Systems built",
+    "systemsDesc": "portals, dashboards and platforms",
+    "techLabel": "Technologies",
+    "techDesc": "infrastructure, cloud and AI"
+  },
+  "experience": {
+    "sectionBadge": "Career",
+    "sectionHeadingPrefix": "A career built at the intersection of",
+    "sectionHeadingGradient": "operations and product",
+    "sectionDescription": "I combine day-to-day IT reliability with hands-on software delivery, turning support knowledge into cleaner systems, better tooling, and shipped product work.",
+    "snapshotLabel": "Career Snapshot",
+    "snapshotTitle": "What I bring to a team",
+    "snapshotBadge": "Real-world execution",
+    "snapshot": {
+      "yearsLabel": "Years shipping",
+      "yearsValue": "3+",
+      "usersLabel": "Daily users supported",
+      "usersValue": "200+",
+      "envLabel": "Core environments",
+      "envValue": "IT + Product",
+      "securityLabel": "Security-first",
+      "securityValue": "Yes"
+    },
+    "workingStyleLabel": "Working style",
+    "workingStyleText": "I move comfortably between tickets, architecture, and implementation. That means I can troubleshoot the production issue, improve the underlying workflow, and leave the system easier to maintain than I found it.",
+    "focusLabel": "Current focus",
+    "focusTitle": "Support today, build for tomorrow",
+    "focusPoints": [
+      "Keeping school systems stable, secure, and easy to use.",
+      "Shipping internal tools that save time for staff and users.",
+      "Designing infrastructure with automation and maintainability in mind."
+    ],
+    "outcomeLabel": "Featured outcome",
+    "outcomeTitle": "Facturd",
+    "outcomeDescription": "My most complete application so far: a full invoicing platform with a stronger product scope, polished workflows, and the kind of structure that shows the widest range of my software and systems work.",
+    "timelineLabel": "Timeline",
+    "timelineTitle": "Professional experience",
+    "timelineDescription": "Two parallel tracks that feed each other: operational discipline and product delivery.",
+    "currentChapter": "Current chapter",
+    "job0": {
+      "role": "IT Support Specialist",
+      "period": "Jul 2025 – Present",
+      "summary": "Own frontline support while keeping the network, identity, and endpoint stack healthy for a fast-moving school environment.",
+      "bullets": [
+        "Frontline technical support for 200+ faculty, staff, and students across hardware, software, and network issues.",
+        "Manage Fortinet FortiGate firewalls: VLAN segmentation, MSS clamping, VPN tunnels, firewall policies, and traffic shaping.",
+        "Administer Active Directory: user/group management, GPO, organizational units, and account lifecycle.",
+        "Deploy and maintain endpoint management via ManageEngine Endpoint Central and ServiceDesk."
+      ]
+    },
+    "job1": {
+      "role": "Full-Stack Developer & Software Architect",
+      "period": "2022 – Present",
+      "summary": "Design and ship production applications across web, mobile, and automation, from real-time collaboration tools to game systems.",
+      "bullets": [
+        "Digital Signage Platform: Fastify 5 + React + PostgreSQL + Docker, WebSocket real-time pairing, Redis caching, MinIO S3, JWT auth.",
+        "Mini Studio Web: Multi-track audio DAW with Flutter + Web Audio API, waveform rendering, PCM WAV export, Firebase backend.",
+        "NoraHR: Production Kanban system (React + Firebase) with Gantt charts, SLA tracking, real-time chat, CI/CD via GitHub Actions.",
+        "AI Video Pipeline: n8n-orchestrated automation with OpenAI/Gemini APIs and reusable content workflows."
+      ]
+    }
+  },
+  "projects": {
+    "sectionBadge": "Featured Projects",
+    "sectionHeadingPrefix": "Featured",
+    "sectionHeadingGradient": "Projects",
+    "sectionDescription": "Production products — from electronic invoicing to in-browser audio studios",
+    "facturdDesc": "Full electronic invoicing system for Dominican Republic (DGII). Multi-company, inventory with FIFO Kardex, drag-and-drop invoice designer, e-CF generation, and JWT auth. Desktop native (Tauri) + Web + PWA.",
+    "norahrDesc": "Production-operational Kanban system with drag-and-drop boards, Gantt charts, SLA tracking, real-time chat, role-based access, and CI/CD via GitHub Actions.",
+    "norahrBadge": "Production",
+    "sharksDesc": "Zero-dependency CMS portal for Carol Morgan School faculty. Google OAuth restricted to @cms.edu.do, drag-and-drop admin panel, real-time CRUD, and image upload with canvas resize.",
+    "sharksBadge": "Used daily by staff",
+    "eventproDesc": "Landing page with custom CMS for an audiovisual production company (LED screens, sound, lighting, CCTV). Supabase backend with full admin panel, deployed on Cloudflare.",
+    "tiendaDesc": "Full e-commerce platform for brand-name clothing at opportunity prices. Product catalog, cart, checkout flow, and responsive design built with React 19.",
+    "soloDesc": "Premium portfolio for a music producer and YouTube content creator. Scroll-driven animations, animated EQ bars, custom loading screen, and SVG masks.",
+    "ministudioDesc": "Professional multi-track audio DAW in the browser with waveform rendering, PCM 16-bit WAV export, and real-time processing via AudioWorklet. Cross-platform: web, macOS, Android, iOS.",
+    "signageDesc": "Enterprise signage system with multi-tenancy, WebSocket real-time screen pairing (6-char codes, 30s heartbeat), content scheduling, and Dockerized deployment.",
+    "eljuegoDesc": "Sandbox simulation game set in a Dominican neighborhood. 8 playable roles, dynamic economy with supply/demand, NPC AI, procedural maps with Python/Pillow.",
+    "statusLive": "Live",
+    "statusLocal": "Local",
+    "cardVisit": "Visit",
+    "cardSource": "Source",
+    "legendLive": "Live — deployed and accessible",
+    "legendLocal": "Local — in development"
+  },
+  "cases": {
+    "sectionBadge": "Case Studies",
+    "sectionHeadingPrefix": "From problem to",
+    "sectionHeadingGradient": "result",
+    "sectionDescription": "How I approach each project: challenge, solution, architecture and measurable result",
+    "steps": {
+      "challenge": "Challenge",
+      "solution": "Solution",
+      "architecture": "Architecture",
+      "result": "Result"
+    },
+    "facturd": {
+      "summary": "Multi-company electronic invoicing platform for Dominican Republic (DGII).",
+      "challenge": "Manual invoicing, no inventory control or electronic fiscal compliance.",
+      "solution": "Web + desktop system with drag-and-drop invoice designer, FIFO Kardex and multi-tenant.",
+      "architecture": "React 19 + FastAPI + PostgreSQL + Supabase, Tauri for desktop, Docker for deploy.",
+      "result": "Complete invoicing platform with e-CF generation, inventory and JWT authentication."
+    },
+    "norahr": {
+      "summary": "Operational Kanban system with Gantt, SLA and real-time chat.",
+      "challenge": "IT operations without task visibility, SLA or incident tracking.",
+      "solution": "Kanban board with drag-and-drop, Gantt view, operational metrics and role-based control.",
+      "architecture": "React + Firebase (Auth, Firestore, Storage), @dnd-kit, GitHub Actions CI/CD.",
+      "result": "Operational tool with role-based permissions, auditing and continuous deployment."
+    },
+    "eventpro": {
+      "summary": "Landing + CMS for an audiovisual production company (LED, sound, lighting).",
+      "challenge": "AV company with no web presence or way to manage their service catalog.",
+      "solution": "Landing page with full admin panel to edit content without touching code.",
+      "architecture": "Vanilla JS + Supabase (Auth, DB, Storage) deployed on Cloudflare.",
+      "result": "Manageable site in production with catalog and team panel."
+    }
+  },
+  "process": {
+    "sectionBadge": "Development Process",
+    "sectionHeadingPrefix": "How I go from idea",
+    "sectionHeadingGradient": "to product",
+    "sectionDescription": "An iterative process that turns business needs into production software",
+    "steps": {
+      "ideaTitle": "Idea",
+      "ideaDesc": "Define the real problem and business goal before writing code.",
+      "architectureTitle": "Architecture",
+      "architectureDesc": "System design: stack, data, security and deployment.",
+      "aiTitle": "AI",
+      "aiDesc": "Smart automation and AI assistance where it adds real value.",
+      "testingTitle": "Testing",
+      "testingDesc": "Critical flow validation and quality before going to production.",
+      "deployTitle": "Deploy",
+      "deployDesc": "Publishing with CI/CD, monitoring and cloud deployment.",
+      "improvementTitle": "Continuous improvement",
+      "improvementDesc": "Iterate with metrics, feedback and sustainable maintenance."
+    }
+  },
+  "liveEvent": {
+    "sectionBadge": "Live Event Experience",
+    "sectionHeadingPrefix": "Technology for",
+    "sectionHeadingGradient": "live events",
+    "sectionDescription": "From audiovisual to IT support: the discipline of making everything work live",
+    "skills": {
+      "ledTitle": "LED Screens",
+      "ledDesc": "Videowall setup, video processors and live content control.",
+      "audioTitle": "Professional Audio",
+      "audioDesc": "Consoles, microphones, sound systems and mixing for corporate and live events.",
+      "camerasTitle": "Cameras",
+      "camerasDesc": "Streaming, switchers, camera lighting and multi-camera capture.",
+      "lightingTitle": "Lighting",
+      "lightingDesc": "Stage light design and control, moving heads and ambient lighting.",
+      "assemblyTitle": "Technical Setup",
+      "assemblyDesc": "Structures, cabling, power and event production logistics.",
+      "troubleshootingTitle": "Troubleshooting",
+      "troubleshootingDesc": "Fast live diagnosis to keep the event experience running."
+    }
+  },
+  "skillsMatrix": {
+    "sectionBadge": "Skills Matrix",
+    "sectionHeadingPrefix": "Mastery level",
+    "sectionHeadingGradient": "by area",
+    "sectionDescription": "Measured by real projects in production, not just courses",
+    "categories": {
+      "frontendTitle": "Frontend",
+      "frontendTools": "React 19 · Flutter · Tailwind 4 · Vite · Figma",
+      "backendTitle": "Backend",
+      "backendTools": "Node.js · Fastify · REST · WebSockets · Zod",
+      "databasesTitle": "Databases",
+      "databasesTools": "PostgreSQL · Firebase · Redis · Supabase",
+      "cloudDeployTitle": "Cloud & Deploy",
+      "cloudDeployTools": "Firebase · Cloudflare · Supabase · Docker",
+      "devopsTitle": "DevOps / CI-CD",
+      "devopsTools": "GitHub Actions · Docker Compose · MinIO",
+      "aiAutomationTitle": "AI & Automation",
+      "aiAutomationTools": "n8n · OpenAI · Gemini · Python"
+    }
+  },
+  "currentProjects": {
+    "sectionLabel": "Current Projects",
+    "sectionHeadingPrefix": "What I'm",
+    "sectionHeadingHighlight": "working on now",
+    "sectionSubtitle": "Active projects that evolve every week",
+    "facturdTag": "Active phase",
+    "facturdDesc": "Completing advanced inventory modules, e-CF and fiscal reports with public roadmap.",
+    "norahrTag": "Continuous improvement",
+    "norahrDesc": "Adding operational metrics, advanced Gantt and role-based notifications.",
+    "norastackTag": "Personal toolkit",
+    "norastackDesc": "Own stack and templates (React + Vite + Fastify + PostgreSQL) to ship products faster.",
+    "aivideoTag": "Experiment",
+    "aivideoDesc": "Video content automation with AI: script, narration and agent-based assembly."
+  },
+  "whyHireMe": {
+    "sectionLabel": "Why Hire Me",
+    "sectionHeadingPrefix": "Why work",
+    "sectionHeadingHighlight": "with me",
+    "sectionSubtitle": "An uncommon combination of technical experience and product vision",
+    "hybridTitle": "Real hybrid profile",
+    "hybridDesc": "I don't just code: I understand infrastructure, business and live production. I bridge the gap that's almost always missing.",
+    "productionTitle": "Products in production",
+    "productionDesc": "Every skill is backed by systems that real companies and teams already use, not demos.",
+    "deliveryTitle": "Delivery & autonomy",
+    "deliveryDesc": "I take the full project: analysis, architecture, code, deployment and ongoing support.",
+    "communicationTitle": "Clear communication",
+    "communicationDesc": "I explain technical decisions in business language and keep progress visible at all times.",
+    "ctaButton": "Let's talk about your project"
+  },
+  "contact": {
+    "sectionLabel": "Contact",
+    "sectionHeadingPrefix": "Let's talk about your",
+    "sectionHeadingHighlight": "project",
+    "sectionSubtitle": "Have an idea, an ongoing project or an open position? Write to me and I'll respond as soon as possible.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "locationLabel": "Location",
+    "locationValue": "Santo Domingo, DR",
+    "ctaEmail": "Send me an email",
+    "ctaLinkedin": "Connect on LinkedIn"
+  },
+  "footer": {
+    "copyright": "© {year} Eduardo Rojas Velasquez. All rights reserved.",
+    "builtWith": "Built with",
+    "usingStack": "using React + Tailwind"
+  }
+}

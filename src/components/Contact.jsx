@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const LinkedinIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -8,17 +9,6 @@ const LinkedinIcon = ({ size = 18 }) => (
     <circle cx="4" cy="4" r="2" />
   </svg>
 )
-
-const methods = [
-  { icon: Mail, label: 'Email', value: 'norascript@gmail.com', href: 'mailto:norascript@gmail.com' },
-  { icon: Phone, label: 'Teléfono', value: '829-578-6284', href: 'tel:18295786284' },
-  {
-    icon: MapPin,
-    label: 'Ubicación',
-    value: 'Santo Domingo, DR',
-    href: 'https://www.google.com/maps/search/Santo+Domingo,+Dominican+Republic',
-  },
-]
 
 const containerVariants = {
   hidden: {},
@@ -31,6 +21,19 @@ const cardVariants = {
 }
 
 export default function Contact() {
+  const { t } = useLanguage()
+
+  const methods = [
+    { icon: Mail, label: t('contact.emailLabel'), value: 'norascript@gmail.com', href: 'mailto:norascript@gmail.com' },
+    { icon: Phone, label: t('contact.phoneLabel'), value: '829-578-6284', href: 'tel:18295786284' },
+    {
+      icon: MapPin,
+      label: t('contact.locationLabel'),
+      value: t('contact.locationValue'),
+      href: 'https://www.google.com/maps/search/Santo+Domingo,+Dominican+Republic',
+    },
+  ]
+
   return (
     <section id="contact" className="section-padding bg-slate-50 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid pointer-events-none" />
@@ -52,13 +55,13 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-xs font-semibold uppercase tracking-[0.22em] text-accent"
           >
-            Contact
+            {t('contact.sectionLabel')}
           </motion.span>
           <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
-            Hablemos de tu <span className="gradient-text">proyecto</span>
+            {t('contact.sectionHeadingPrefix')} <span className="gradient-text">{t('contact.sectionHeadingHighlight')}</span>
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
-            ¿Tienes una idea, un proyecto en curso o una posición abierta? Escríbeme y respondo lo antes posible.
+            {t('contact.sectionSubtitle')}
           </p>
 
           <motion.div
@@ -103,7 +106,7 @@ export default function Contact() {
               className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-blue-500 px-7 py-3 font-bold text-white shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300"
             >
               <Send size={16} />
-              <span>Escríbeme un correo</span>
+              <span>{t('contact.ctaEmail')}</span>
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.04 }}
@@ -114,7 +117,7 @@ export default function Contact() {
               className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-7 py-3 font-bold text-slate-700 hover:border-accent/40 hover:text-accent transition-all duration-300"
             >
               <LinkedinIcon size={16} />
-              <span>Conectar en LinkedIn</span>
+              <span>{t('contact.ctaLinkedin')}</span>
             </motion.a>
           </motion.div>
         </motion.div>

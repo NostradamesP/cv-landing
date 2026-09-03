@@ -1,38 +1,6 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { MonitorPlay, Volume2, Clapperboard, Sun, Cable, Wrench } from 'lucide-react'
-
-const skills = [
-  {
-    icon: MonitorPlay,
-    title: 'Pantallas LED',
-    desc: 'Configuración de videowalls, procesadores de video y control de contenido en directo.',
-  },
-  {
-    icon: Volume2,
-    title: 'Audio profesional',
-    desc: 'Consolas, microfonía, sistemas de sonido y mezcla para eventos corporativos y en vivo.',
-  },
-  {
-    icon: Clapperboard,
-    title: 'Cámaras',
-    desc: 'Streaming, switchers, iluminación de cámara y captura multicámara.',
-  },
-  {
-    icon: Sun,
-    title: 'Iluminación',
-    desc: 'Diseño y control de luces de escenario, cabezas móviles y ambientes.',
-  },
-  {
-    icon: Cable,
-    title: 'Montaje técnico',
-    desc: 'Estructuras, cableado, energía y logística de producción de eventos.',
-  },
-  {
-    icon: Wrench,
-    title: 'Troubleshooting',
-    desc: 'Diagnóstico rápido en vivo para no detener la experiencia del evento.',
-  },
-]
+import { useLanguage } from '../i18n/LanguageContext'
 
 const containerVariants = {
   hidden: {},
@@ -45,6 +13,41 @@ const cardVariants = {
 }
 
 export default function LiveEvent() {
+  const { t } = useLanguage()
+
+  const skills = [
+    {
+      icon: MonitorPlay,
+      title: t('liveEvent.skills.ledTitle'),
+      desc: t('liveEvent.skills.ledDesc'),
+    },
+    {
+      icon: Volume2,
+      title: t('liveEvent.skills.audioTitle'),
+      desc: t('liveEvent.skills.audioDesc'),
+    },
+    {
+      icon: Clapperboard,
+      title: t('liveEvent.skills.camerasTitle'),
+      desc: t('liveEvent.skills.camerasDesc'),
+    },
+    {
+      icon: Sun,
+      title: t('liveEvent.skills.lightingTitle'),
+      desc: t('liveEvent.skills.lightingDesc'),
+    },
+    {
+      icon: Cable,
+      title: t('liveEvent.skills.assemblyTitle'),
+      desc: t('liveEvent.skills.assemblyDesc'),
+    },
+    {
+      icon: Wrench,
+      title: t('liveEvent.skills.troubleshootingTitle'),
+      desc: t('liveEvent.skills.troubleshootingDesc'),
+    },
+  ]
+
   return (
     <section id="live-event" className="section-padding bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
@@ -61,13 +64,13 @@ export default function LiveEvent() {
             viewport={{ once: true }}
             className="text-xs font-semibold text-accent uppercase tracking-[0.2em]"
           >
-            Live Event Experience
+            {t('liveEvent.sectionBadge')}
           </motion.span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">
-            Tecnología para <span className="gradient-text">eventos en vivo</span>
+            {t('liveEvent.sectionHeadingPrefix')} <span className="gradient-text">{t('liveEvent.sectionHeadingGradient')}</span>
           </h2>
           <p className="text-slate-500 text-sm mt-2 max-w-xl mx-auto">
-            Del mundo audiovisual al soporte IT: la disciplina de que todo funcione en directo
+            {t('liveEvent.sectionDescription')}
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-blue-400 rounded-full mx-auto mt-4" />
         </motion.div>

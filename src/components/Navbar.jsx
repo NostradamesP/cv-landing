@@ -1,20 +1,22 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { Menu, X, Download } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const navLinks = [
-  { id: 'hero', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'expertise', label: 'Expertise' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'contact', label: 'Contact' },
-]
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Navbar({ activeSection }) {
+  const { lang, t, toggleLang } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
+
+  const navLinks = [
+    { id: 'hero', label: t('nav.home') },
+    { id: 'about', label: t('nav.about') },
+    { id: 'expertise', label: t('nav.expertise') },
+    { id: 'projects', label: t('nav.projects') },
+    { id: 'experience', label: t('nav.experience') },
+    { id: 'contact', label: t('nav.contact') },
+  ]
 
   useEffect(() => {
     const onScroll = () => {
@@ -79,25 +81,46 @@ export default function Navbar({ activeSection }) {
               )}
             </button>
           ))}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={toggleLang}
+            className={`px-3 py-1.5 text-xs font-bold rounded-full border transition-all duration-200 ${
+              scrolled
+                ? 'border-slate-300 text-slate-700 hover:border-accent hover:text-accent'
+                : 'border-white/20 text-white/80 hover:border-white/50 hover:text-white'
+            }`}
+          >
+            {lang === 'es' ? 'EN' : 'ES'}
+          </motion.button>
           <motion.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            href="/CV_Eduardo_Rojas_Velasquez.pdf"
+            href="/CV_Eduardo_Velasquez_ES.pdf"
             download
             className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-accent to-blue-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-200"
           >
             <Download size={14} />
-            <span>Download CV</span>
+            <span>{t('nav.downloadCv')}</span>
           </motion.a>
         </nav>
 
         {/* Mobile toggle */}
-        <button
-          className="md:hidden text-slate-700 p-2 rounded-lg hover:bg-slate-100 transition-colors"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            onClick={toggleLang}
+            className="px-2.5 py-1 text-xs font-bold rounded-full border border-white/20 text-white/80 hover:border-white/50 hover:text-white"
+          >
+            {lang === 'es' ? 'EN' : 'ES'}
+          </motion.button>
+          <button
+            className="text-slate-700 p-2 rounded-lg hover:bg-slate-100 transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -132,12 +155,12 @@ export default function Navbar({ activeSection }) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
                 whileHover={{ scale: 1.02 }}
-                href="/CV_Eduardo_Rojas_Velasquez.pdf"
+                href="/CV_Eduardo_Velasquez_ES.pdf"
                 download
                 className="flex items-center justify-center gap-2 mt-2 px-4 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-accent to-blue-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all"
               >
                 <Download size={14} />
-                <span>Download CV</span>
+                <span>{t('nav.downloadCv')}</span>
               </motion.a>
             </div>
           </motion.div>

@@ -1,14 +1,6 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { Lightbulb, DraftingCompass, Brain, TestTube2, Rocket, RefreshCw } from 'lucide-react'
-
-const process = [
-  { icon: Lightbulb, title: 'Idea', desc: 'Definir el problema real y el objetivo de negocio antes de escribir código.' },
-  { icon: DraftingCompass, title: 'Arquitectura', desc: 'Diseño del sistema: stack, datos, seguridad y despliegue.' },
-  { icon: Brain, title: 'IA', desc: 'Automatización inteligente y asistencia con IA donde aporta valor real.' },
-  { icon: TestTube2, title: 'Testing', desc: 'Validación de flujos críticos y calidad antes de salir a producción.' },
-  { icon: Rocket, title: 'Deploy', desc: 'Publicación con CI/CD, monitoreo y despliegue en la nube.' },
-  { icon: RefreshCw, title: 'Mejora continua', desc: 'Iterar con métricas, feedback y mantenimiento sostenible.' },
-]
+import { useLanguage } from '../i18n/LanguageContext'
 
 const containerVariants = {
   hidden: {},
@@ -21,6 +13,17 @@ const cardVariants = {
 }
 
 export default function DevelopmentProcess() {
+  const { t } = useLanguage()
+
+  const process = [
+    { icon: Lightbulb, title: t('process.steps.ideaTitle'), desc: t('process.steps.ideaDesc') },
+    { icon: DraftingCompass, title: t('process.steps.architectureTitle'), desc: t('process.steps.architectureDesc') },
+    { icon: Brain, title: t('process.steps.aiTitle'), desc: t('process.steps.aiDesc') },
+    { icon: TestTube2, title: t('process.steps.testingTitle'), desc: t('process.steps.testingDesc') },
+    { icon: Rocket, title: t('process.steps.deployTitle'), desc: t('process.steps.deployDesc') },
+    { icon: RefreshCw, title: t('process.steps.improvementTitle'), desc: t('process.steps.improvementDesc') },
+  ]
+
   return (
     <section id="process" className="section-padding bg-slate-50 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid pointer-events-none" />
@@ -39,13 +42,13 @@ export default function DevelopmentProcess() {
             viewport={{ once: true }}
             className="text-xs font-semibold text-accent uppercase tracking-[0.2em]"
           >
-            Development Process
+            {t('process.sectionBadge')}
           </motion.span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">
-            Cómo paso de la idea <span className="gradient-text">al producto</span>
+            {t('process.sectionHeadingPrefix')} <span className="gradient-text">{t('process.sectionHeadingGradient')}</span>
           </h2>
           <p className="text-slate-500 text-sm mt-2 max-w-xl mx-auto">
-            Un proceso iterativo que convierte necesidades de negocio en software en producción
+            {t('process.sectionDescription')}
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-blue-400 rounded-full mx-auto mt-4" />
         </motion.div>

@@ -1,15 +1,8 @@
-import { useState, useEffect, useMemo } from 'react'
+﻿import { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowDown, Mail, MapPin, Phone, Download, Rocket, MessageCircle, Server, Users, Layers, Cpu } from 'lucide-react'
+import { useLanguage } from '../i18n/LanguageContext'
 
-const roles = [
-  'IT Support Specialist',
-  'Full-Stack Developer',
-  'Software Architect',
-  'Automation Engineer',
-]
-
-// Inline SVG icons for social media (not available in lucide-react v1.23)
 const LinkedinIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -25,20 +18,8 @@ const GithubIcon = ({ size = 18 }) => (
   </svg>
 )
 
-const headline = ['IT Operations', 'Business Software Developer', 'AI Automation']
-
-const contactLinks = [
-  { label: 'Email', value: 'norascript@gmail.com', href: 'mailto:norascript@gmail.com', icon: Mail },
-  { label: 'Phone', value: '829-578-6284', href: 'tel:18295786284', icon: Phone },
-  {
-    label: 'Location',
-    value: 'Santo Domingo, DR',
-    href: 'https://www.google.com/maps/search/Santo+Domingo,+Dominican+Republic',
-    icon: MapPin,
-  },
-]
-
 export default function Hero() {
+  const { t } = useLanguage()
   const [roleIndex, setRoleIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
@@ -55,7 +36,26 @@ export default function Hero() {
     []
   )
 
-  // Typewriter effect
+  const roles = [
+    t('hero.role1'),
+    t('hero.role2'),
+    t('hero.role3'),
+    t('hero.role4'),
+  ]
+
+  const headline = [t('hero.headline1'), t('hero.headline2'), t('hero.headline3')]
+
+  const contactLinks = [
+    { label: t('hero.contact.emailLabel'), value: 'norascript@gmail.com', href: 'mailto:norascript@gmail.com', icon: Mail },
+    { label: t('hero.contact.phoneLabel'), value: '829-578-6284', href: 'tel:18295786284', icon: Phone },
+    {
+      label: t('hero.contact.locationLabel'),
+      value: 'Santo Domingo, DR',
+      href: 'https://www.google.com/maps/search/Santo+Domingo,+Dominican+Republic',
+      icon: MapPin,
+    },
+  ]
+
   useEffect(() => {
     const currentRole = roles[roleIndex]
     let timeout
@@ -80,7 +80,6 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero-gradient min-h-screen flex items-center relative overflow-hidden">
-      {/* Floating particles */}
       {particles.map((p) => (
         <div
           key={p.id}
@@ -95,7 +94,6 @@ export default function Hero() {
         />
       ))}
 
-      {/* Decorative blobs */}
       <motion.div
         animate={{ scale: [1, 1.1, 1], rotate: [0, 5, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
@@ -107,7 +105,6 @@ export default function Hero() {
         className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-indigo-500/5 blur-3xl"
       />
 
-      {/* Grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
       <div className="max-w-6xl mx-auto px-6 w-full relative z-10 py-24">
@@ -127,7 +124,7 @@ export default function Hero() {
                   transition={{ duration: 1.5, repeat: Infinity }}
                   className="w-2 h-2 bg-blue-400 rounded-full"
                 />
-                Available for opportunities
+                {t('hero.badge')}
               </span>
             </motion.div>
 
@@ -155,7 +152,7 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            {/* New headline */}
+            {/* Headline */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -170,40 +167,46 @@ export default function Hero() {
               ))}
             </motion.div>
 
-            {/* CTA buttons */}
+            {/* CTA buttons — improved visual hierarchy */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-wrap gap-3 mb-8"
             >
+              {/* Primary */}
               <motion.button
                 whileHover={{ scale: 1.03, y: -1 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => scrollTo('projects')}
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-blue-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-accent to-blue-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300"
               >
-                <Rocket size={16} />
-                Ver Proyectos
+                <Rocket size={16} className="group-hover:translate-y-0.5 transition-transform duration-300" />
+                {t('hero.cta.projects')}
               </motion.button>
+
+              {/* Secondary — accent tint */}
               <motion.button
                 whileHover={{ scale: 1.03, y: -1 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => scrollTo('contact')}
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm hover:bg-white/10 hover:border-blue-400/40 transition-all duration-300"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-accent/30 bg-accent/10 px-6 py-3.5 text-sm font-bold text-blue-300 backdrop-blur-sm hover:bg-accent/20 hover:border-accent/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300"
               >
-                <MessageCircle size={16} />
-                Contáctame
+                <MessageCircle size={16} className="group-hover:translate-y-0.5 transition-transform duration-300" />
+                {t('hero.cta.contact')}
               </motion.button>
+
+              {/* Download — clean outline */}
               <motion.a
                 whileHover={{ scale: 1.03, y: -1 }}
                 whileTap={{ scale: 0.97 }}
-                href="/CV_Eduardo_Rojas_Velasquez.pdf"
+                href="/CV_Eduardo_Velasquez_ES.pdf"
                 download
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm hover:bg-white/10 hover:border-blue-400/40 transition-all duration-300"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-sm font-bold text-white backdrop-blur-sm hover:border-white/60 hover:bg-white/10 transition-all duration-300"
               >
-                <Download size={16} />
-                Descargar CV
+                <Download size={16} className="group-hover:translate-y-0.5 transition-transform duration-300" />
+                {t('hero.cta.downloadCv')}
+                <span className="ml-1 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded bg-white/10 text-white/60">PDF</span>
               </motion.a>
             </motion.div>
 
@@ -242,9 +245,9 @@ export default function Hero() {
                   href={item.href}
                   target={item.href.startsWith('http') ? '_blank' : undefined}
                   rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left backdrop-blur-sm transition-all duration-200 hover:border-blue-400/30 hover:bg-white/10"
+                  className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left backdrop-blur-sm transition-all duration-300 hover:border-blue-400/30 hover:bg-white/10 hover:shadow-lg hover:shadow-blue-500/10"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300 group-hover:scale-110 transition-transform duration-300">
                     <item.icon size={16} />
                   </span>
                   <span className="min-w-0">
@@ -282,7 +285,7 @@ export default function Hero() {
                   <Icon size={18} />
                 </motion.a>
               ))}
-              <span className="text-xs text-slate-500 ml-1">LinkedIn, GitHub y email directo</span>
+              <span className="text-xs text-slate-500 ml-1">{t('hero.socials.description')}</span>
             </motion.div>
           </div>
 
@@ -312,17 +315,17 @@ export default function Hero() {
 
               <div className="space-y-2.5 font-mono text-[13px] leading-relaxed">
                 <p className="text-slate-300">
-                  <span className="text-blue-300">IT Operations</span>
+                  <span className="text-blue-300">{t('hero.terminal.label1')}</span>
                   <span className="text-slate-500"> → </span>
                   <span className="text-emerald-300">Fortinet · AD · MDM</span>
                 </p>
                 <p className="text-slate-300">
-                  <span className="text-blue-300">Business Software</span>
+                  <span className="text-blue-300">{t('hero.terminal.label2')}</span>
                   <span className="text-slate-500"> → </span>
                   <span className="text-emerald-300">React · Fastify · PostgreSQL</span>
                 </p>
                 <p className="text-slate-300">
-                  <span className="text-blue-300">AI Automation</span>
+                  <span className="text-blue-300">{t('hero.terminal.label3')}</span>
                   <span className="text-slate-500"> → </span>
                   <span className="text-emerald-300">n8n · OpenAI · Gemini</span>
                 </p>
@@ -337,10 +340,10 @@ export default function Hero() {
             {/* Stats grid */}
             <div className="mt-4 grid grid-cols-2 gap-3">
               {[
-                { icon: Server, value: '200+', label: 'Dispositivos', delay: 0.5 },
-                { icon: Layers, value: '9+', label: 'En producción', delay: 0.58 },
-                { icon: Users, value: '3+', label: 'Años de IT', delay: 0.66 },
-                { icon: Cpu, value: '20+', label: 'Tecnologías', delay: 0.74 },
+                { icon: Server, value: '200+', label: t('hero.stat.devices'), delay: 0.5 },
+                { icon: Layers, value: '9+', label: t('hero.stat.inProduction'), delay: 0.58 },
+                { icon: Users, value: '3+', label: t('hero.stat.years'), delay: 0.66 },
+                { icon: Cpu, value: '20+', label: t('hero.stat.tech'), delay: 0.74 },
               ].map(({ icon: Icon, value, label, delay }) => (
                 <motion.div
                   key={label}
@@ -370,7 +373,7 @@ export default function Hero() {
             >
               <span className="flex items-center gap-2 text-xs font-semibold text-white">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                AI Automation
+                {t('hero.floatingBadge')}
               </span>
             </motion.div>
           </motion.div>

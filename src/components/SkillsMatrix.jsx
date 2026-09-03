@@ -1,50 +1,6 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { LayoutDashboard, Server, Database, Cloud, GitBranch, Brain } from 'lucide-react'
-
-const categories = [
-  {
-    icon: LayoutDashboard,
-    title: 'Frontend',
-    level: 90,
-    color: 'from-blue-500 to-cyan-400',
-    tools: 'React 19 · Flutter · Tailwind 4 · Vite · Figma',
-  },
-  {
-    icon: Server,
-    title: 'Backend',
-    level: 85,
-    color: 'from-emerald-500 to-teal-400',
-    tools: 'Node.js · Fastify · REST · WebSockets · Zod',
-  },
-  {
-    icon: Database,
-    title: 'Bases de datos',
-    level: 80,
-    color: 'from-violet-500 to-purple-400',
-    tools: 'PostgreSQL · Firebase · Redis · Supabase',
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud & Deploy',
-    level: 85,
-    color: 'from-cyan-500 to-sky-400',
-    tools: 'Firebase · Cloudflare · Supabase · Docker',
-  },
-  {
-    icon: GitBranch,
-    title: 'DevOps / CI-CD',
-    level: 75,
-    color: 'from-amber-500 to-orange-400',
-    tools: 'GitHub Actions · Docker Compose · MinIO',
-  },
-  {
-    icon: Brain,
-    title: 'AI & Automation',
-    level: 70,
-    color: 'from-fuchsia-500 to-pink-400',
-    tools: 'n8n · OpenAI · Gemini · Python',
-  },
-]
+import { useLanguage } from '../i18n/LanguageContext'
 
 const containerVariants = {
   hidden: {},
@@ -57,6 +13,53 @@ const rowVariants = {
 }
 
 export default function SkillsMatrix() {
+  const { t } = useLanguage()
+
+  const categories = [
+    {
+      icon: LayoutDashboard,
+      title: t('skillsMatrix.categories.frontendTitle'),
+      level: 90,
+      color: 'from-blue-500 to-cyan-400',
+      tools: t('skillsMatrix.categories.frontendTools'),
+    },
+    {
+      icon: Server,
+      title: t('skillsMatrix.categories.backendTitle'),
+      level: 85,
+      color: 'from-emerald-500 to-teal-400',
+      tools: t('skillsMatrix.categories.backendTools'),
+    },
+    {
+      icon: Database,
+      title: t('skillsMatrix.categories.databasesTitle'),
+      level: 80,
+      color: 'from-violet-500 to-purple-400',
+      tools: t('skillsMatrix.categories.databasesTools'),
+    },
+    {
+      icon: Cloud,
+      title: t('skillsMatrix.categories.cloudDeployTitle'),
+      level: 85,
+      color: 'from-cyan-500 to-sky-400',
+      tools: t('skillsMatrix.categories.cloudDeployTools'),
+    },
+    {
+      icon: GitBranch,
+      title: t('skillsMatrix.categories.devopsTitle'),
+      level: 75,
+      color: 'from-amber-500 to-orange-400',
+      tools: t('skillsMatrix.categories.devopsTools'),
+    },
+    {
+      icon: Brain,
+      title: t('skillsMatrix.categories.aiAutomationTitle'),
+      level: 70,
+      color: 'from-fuchsia-500 to-pink-400',
+      tools: t('skillsMatrix.categories.aiAutomationTools'),
+    },
+  ]
+
   return (
     <section id="skills-matrix" className="section-padding bg-slate-50 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid pointer-events-none" />
@@ -75,13 +78,13 @@ export default function SkillsMatrix() {
             viewport={{ once: true }}
             className="text-xs font-semibold text-accent uppercase tracking-[0.2em]"
           >
-            Skills Matrix
+            {t('skillsMatrix.sectionBadge')}
           </motion.span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">
-            Nivel de dominio <span className="gradient-text">por área</span>
+            {t('skillsMatrix.sectionHeadingPrefix')} <span className="gradient-text">{t('skillsMatrix.sectionHeadingGradient')}</span>
           </h2>
           <p className="text-slate-500 text-sm mt-2 max-w-xl mx-auto">
-            Medido por proyectos reales en producción, no solo por cursos
+            {t('skillsMatrix.sectionDescription')}
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-blue-400 rounded-full mx-auto mt-4" />
         </motion.div>

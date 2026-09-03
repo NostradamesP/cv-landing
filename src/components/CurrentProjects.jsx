@@ -1,44 +1,6 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { FileText, Kanban, Boxes, BrainCircuit } from 'lucide-react'
-
-const projects = [
-  {
-    icon: FileText,
-    title: 'FactuRD',
-    tag: 'Fase activa',
-    tone: 'text-blue-600 bg-blue-50 border-blue-200',
-    progress: 80,
-    gradient: 'from-blue-500 to-indigo-400',
-    desc: 'Completando módulos de inventario avanzado, e-CF y reportes fiscales con roadmap público.',
-  },
-  {
-    icon: Kanban,
-    title: 'NoraHR — Kanban IT',
-    tag: 'Mejora continua',
-    tone: 'text-emerald-600 bg-emerald-50 border-emerald-200',
-    progress: 90,
-    gradient: 'from-emerald-500 to-teal-400',
-    desc: 'Agregando métricas operativas, Gantt avanzado y notificaciones por rol.',
-  },
-  {
-    icon: Boxes,
-    title: 'NoraStack',
-    tag: 'Toolkit personal',
-    tone: 'text-violet-600 bg-violet-50 border-violet-200',
-    progress: 65,
-    gradient: 'from-violet-500 to-fuchsia-400',
-    desc: 'Stack y plantillas propias (React + Vite + Fastify + PostgreSQL) para lanzar productos más rápido.',
-  },
-  {
-    icon: BrainCircuit,
-    title: 'AI Video Pipeline',
-    tag: 'Experimento',
-    tone: 'text-amber-600 bg-amber-50 border-amber-200',
-    progress: 40,
-    gradient: 'from-amber-500 to-orange-400',
-    desc: 'Automatización de contenido en video con IA: guión, narración y ensamblaje por agentes.',
-  },
-]
+import { useLanguage } from '../i18n/LanguageContext'
 
 const containerVariants = {
   hidden: {},
@@ -51,6 +13,47 @@ const cardVariants = {
 }
 
 export default function CurrentProjects() {
+  const { t } = useLanguage()
+
+  const projects = [
+    {
+      icon: FileText,
+      title: 'FactuRD',
+      tag: t('currentProjects.facturdTag'),
+      tone: 'text-blue-600 bg-blue-50 border-blue-200',
+      progress: 80,
+      gradient: 'from-blue-500 to-indigo-400',
+      desc: t('currentProjects.facturdDesc'),
+    },
+    {
+      icon: Kanban,
+      title: 'NoraHR — Kanban IT',
+      tag: t('currentProjects.norahrTag'),
+      tone: 'text-emerald-600 bg-emerald-50 border-emerald-200',
+      progress: 90,
+      gradient: 'from-emerald-500 to-teal-400',
+      desc: t('currentProjects.norahrDesc'),
+    },
+    {
+      icon: Boxes,
+      title: 'NoraStack',
+      tag: t('currentProjects.norastackTag'),
+      tone: 'text-violet-600 bg-violet-50 border-violet-200',
+      progress: 65,
+      gradient: 'from-violet-500 to-fuchsia-400',
+      desc: t('currentProjects.norastackDesc'),
+    },
+    {
+      icon: BrainCircuit,
+      title: 'AI Video Pipeline',
+      tag: t('currentProjects.aivideoTag'),
+      tone: 'text-amber-600 bg-amber-50 border-amber-200',
+      progress: 40,
+      gradient: 'from-amber-500 to-orange-400',
+      desc: t('currentProjects.aivideoDesc'),
+    },
+  ]
+
   return (
     <section id="current-projects" className="section-padding bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
@@ -67,13 +70,13 @@ export default function CurrentProjects() {
             viewport={{ once: true }}
             className="text-xs font-semibold text-accent uppercase tracking-[0.2em]"
           >
-            Current Projects
+            {t('currentProjects.sectionLabel')}
           </motion.span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">
-            En qué estoy <span className="gradient-text">trabajando ahora</span>
+            {t('currentProjects.sectionHeadingPrefix')} <span className="gradient-text">{t('currentProjects.sectionHeadingHighlight')}</span>
           </h2>
           <p className="text-slate-500 text-sm mt-2 max-w-xl mx-auto">
-            Proyectos activos que evolucionan cada semana
+            {t('currentProjects.sectionSubtitle')}
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-blue-400 rounded-full mx-auto mt-4" />
         </motion.div>

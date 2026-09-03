@@ -1,14 +1,6 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { Shield, Server, Cloud, Network, Wrench, Code2 } from 'lucide-react'
-
-const highlights = [
-  { icon: Network, label: 'Fortinet & Networking', desc: 'FortiGate, VLAN, VPN, MSS clamping', color: 'from-red-500 to-orange-500' },
-  { icon: Server, label: 'Infraestructura', desc: 'Active Directory, ManageEngine, Mosyle MDM', color: 'from-blue-500 to-cyan-500' },
-  { icon: Cloud, label: 'Plataformas Cloud', desc: 'Firebase, Supabase, Cloudflare, Docker', color: 'from-purple-500 to-pink-500' },
-  { icon: Code2, label: 'Full-Stack Dev', desc: 'Flutter, React, Fastify, PostgreSQL', color: 'from-emerald-500 to-teal-500' },
-  { icon: Shield, label: 'Seguridad', desc: 'JWT, CSP, RBAC, OWASP, políticas de firewall', color: 'from-amber-500 to-yellow-500' },
-  { icon: Wrench, label: 'Automatización', desc: 'n8n workflows, Python, CI/CD, pipelines LLM', color: 'from-indigo-500 to-violet-500' },
-]
+import { useLanguage } from '../i18n/LanguageContext'
 
 const containerVariants = {
   hidden: {},
@@ -37,6 +29,17 @@ function HighlightCard({ icon: Icon, label, desc, color }) {
 }
 
 export default function About() {
+  const { t } = useLanguage()
+
+  const highlights = [
+    { icon: Network, label: t('about.highlight.networkingLabel'), desc: t('about.highlight.networkingDesc'), color: 'from-red-500 to-orange-500' },
+    { icon: Server, label: t('about.highlight.infraLabel'), desc: t('about.highlight.infraDesc'), color: 'from-blue-500 to-cyan-500' },
+    { icon: Cloud, label: t('about.highlight.cloudLabel'), desc: t('about.highlight.cloudDesc'), color: 'from-purple-500 to-pink-500' },
+    { icon: Code2, label: t('about.highlight.fullstackLabel'), desc: t('about.highlight.fullstackDesc'), color: 'from-emerald-500 to-teal-500' },
+    { icon: Shield, label: t('about.highlight.securityLabel'), desc: t('about.highlight.securityDesc'), color: 'from-amber-500 to-yellow-500' },
+    { icon: Wrench, label: t('about.highlight.automationLabel'), desc: t('about.highlight.automationDesc'), color: 'from-indigo-500 to-violet-500' },
+  ]
+
   return (
     <section id="about" className="section-padding bg-slate-50 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid pointer-events-none" />
@@ -56,10 +59,10 @@ export default function About() {
             viewport={{ once: true }}
             className="text-xs font-semibold text-accent uppercase tracking-[0.2em]"
           >
-            About Me
+            {t('about.sectionLabel')}
           </motion.span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">
-            De la infraestructura al <span className="gradient-text">desarrollo con IA</span>
+            {t('about.heading')}
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-blue-400 rounded-full mx-auto mt-4" />
         </motion.div>
@@ -73,14 +76,10 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-slate-700 leading-relaxed mb-4 text-[15px]">
-              Mi camino comenzó en <strong className="text-slate-900">tecnología audiovisual para eventos en vivo</strong> — LED, sonido, cámaras y montaje — donde aprendí
-              que el sistema tiene que funcionar <em>en directo</em>. De ahí pasé a <strong className="text-slate-900">IT Support Specialist en Carol Morgan School</strong>,
-              administrando 200+ dispositivos, firewalls <strong>Fortinet</strong>, <strong>Active Directory</strong> y endpoints con <strong>ManageEngine</strong>.
+              {t('about.paragraph1')}
             </p>
             <p className="text-slate-600 leading-relaxed text-sm">
-              En paralelo construí productos de negocio en producción: sistemas de facturación, kanban operativo, portales y plataformas
-              con <strong>React</strong>, <strong>Flutter</strong>, <strong>Fastify</strong> y <strong>PostgreSQL</strong>, desplegados en <strong>Firebase</strong>, <strong>Supabase</strong> y <strong>Cloudflare</strong>.
-              Hoy integro la disciplina de operaciones IT con el desarrollo de software y la <strong>automatización con IA</strong> para resolver problemas reales de negocio.
+              {t('about.paragraph2')}
             </p>
           </motion.div>
 
@@ -96,14 +95,14 @@ export default function About() {
             <div className="relative z-10">
               <h3 className="font-semibold text-sm text-blue-300 mb-4 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
-                Quick Facts
+                {t('about.quickFacts.title')}
               </h3>
               <div className="space-y-3.5 text-sm">
                 {[
-                  ['📍 Ubicación', 'Santo Domingo, DR'],
-                  ['📧 Email', 'norascript@gmail.com'],
-                  ['📞 Teléfono', '809-943-1727'],
-                  ['🌐 Idiomas', 'Español · English'],
+                  [t('about.quickFacts.location'), 'Santo Domingo, DR'],
+                  [t('about.quickFacts.email'), 'norascript@gmail.com'],
+                  [t('about.quickFacts.phone'), '809-943-1727'],
+                  [t('about.quickFacts.languages'), 'Espanol · English'],
                 ].map(([label, value], i) => (
                   <motion.div
                     key={label}

@@ -1,28 +1,6 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { Rocket, MessageCircle, Shield, Layers3, ArrowRight } from 'lucide-react'
-
-const reasons = [
-  {
-    icon: Layers3,
-    title: 'Perfil híbrido real',
-    desc: 'No solo programo: entiendo infraestructura, negocio y producción en vivo. Cierro el puente que casi siempre falta.',
-  },
-  {
-    icon: Shield,
-    title: 'Productos en producción',
-    desc: 'Cada habilidad está respaldada por sistemas que ya usan empresas y equipos reales, no demos.',
-  },
-  {
-    icon: Rocket,
-    title: 'Entrega y autonomía',
-    desc: 'Tomo el proyecto completo: análisis, arquitectura, código, despliegue y soporte posterior.',
-  },
-  {
-    icon: MessageCircle,
-    title: 'Comunicación clara',
-    desc: 'Explico decisiones técnicas en lenguaje de negocio y mantengo el avance visible en todo momento.',
-  },
-]
+import { useLanguage } from '../i18n/LanguageContext'
 
 const containerVariants = {
   hidden: {},
@@ -35,6 +13,31 @@ const cardVariants = {
 }
 
 export default function WhyHireMe() {
+  const { t } = useLanguage()
+
+  const reasons = [
+    {
+      icon: Layers3,
+      title: t('whyHireMe.hybridTitle'),
+      desc: t('whyHireMe.hybridDesc'),
+    },
+    {
+      icon: Shield,
+      title: t('whyHireMe.productionTitle'),
+      desc: t('whyHireMe.productionDesc'),
+    },
+    {
+      icon: Rocket,
+      title: t('whyHireMe.deliveryTitle'),
+      desc: t('whyHireMe.deliveryDesc'),
+    },
+    {
+      icon: MessageCircle,
+      title: t('whyHireMe.communicationTitle'),
+      desc: t('whyHireMe.communicationDesc'),
+    },
+  ]
+
   return (
     <section id="why-me" className="relative overflow-hidden bg-navy-900 py-24">
       <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
@@ -55,13 +58,13 @@ export default function WhyHireMe() {
             viewport={{ once: true }}
             className="text-xs font-semibold text-accent uppercase tracking-[0.2em]"
           >
-            Why Hire Me
+            {t('whyHireMe.sectionLabel')}
           </motion.span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-3">
-            Por qué trabajar <span className="gradient-text">conmigo</span>
+            {t('whyHireMe.sectionHeadingPrefix')} <span className="gradient-text">{t('whyHireMe.sectionHeadingHighlight')}</span>
           </h2>
           <p className="text-slate-400 text-sm mt-2 max-w-xl mx-auto">
-            Una combinación poco común de experiencia técnica y visión de producto
+            {t('whyHireMe.sectionSubtitle')}
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-blue-400 rounded-full mx-auto mt-4" />
         </motion.div>
@@ -100,7 +103,7 @@ export default function WhyHireMe() {
             href="#contact"
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-blue-500 px-8 py-3.5 text-sm font-bold text-white shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 hover:scale-[1.02]"
           >
-            Hablemos de tu proyecto
+            {t('whyHireMe.ctaButton')}
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>

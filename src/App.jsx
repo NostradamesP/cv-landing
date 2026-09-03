@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
+import { LanguageProvider } from './i18n/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import DemoPanel from './components/DemoPanel'
@@ -40,27 +41,29 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar activeSection={activeSection} />
-      <main>
-        <Hero />
-        <DemoPanel />
-        <QuickStats />
-        <About />
-        <CoreExpertise />
-        <Skills />
-        <Experience />
-        <Projects />
-        <CaseStudies />
-        <DevelopmentProcess />
-        <LiveEvent />
-        <SkillsMatrix />
-        <CurrentProjects />
-        <WhyHireMe />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-white">
+        <Navbar activeSection={activeSection} />
+        <main>
+          <Hero />
+          <DemoPanel />
+          <QuickStats />
+          <About />
+          <CoreExpertise />
+          <Skills />
+          <Experience />
+          <Projects />
+          <CaseStudies />
+          <DevelopmentProcess />
+          <LiveEvent />
+          <SkillsMatrix />
+          <CurrentProjects />
+          <WhyHireMe />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }
 

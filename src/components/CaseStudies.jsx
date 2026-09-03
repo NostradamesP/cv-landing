@@ -1,54 +1,6 @@
 import { motion } from 'framer-motion'
 import { Target, Puzzle, Network, TrendingUp, FileText, Kanban, MonitorPlay } from 'lucide-react'
-
-const steps = [
-  { label: 'Challenge', icon: Target, tone: 'bg-rose-500' },
-  { label: 'Solution', icon: Puzzle, tone: 'bg-amber-500' },
-  { label: 'Architecture', icon: Network, tone: 'bg-cyan-500' },
-  { label: 'Result', icon: TrendingUp, tone: 'bg-emerald-500' },
-]
-
-const caseStudies = [
-  {
-    icon: FileText,
-    title: 'FactuRD',
-    gradient: 'from-blue-600 to-indigo-600',
-    summary: 'Plataforma de facturación electrónica multi-empresa para República Dominicana (DGII).',
-    items: {
-      Challenge: 'Facturación manual, sin control de inventario ni cumplimiento fiscal electrónico.',
-      Solution: 'Sistema web + desktop con diseñador de facturas drag-and-drop, Kardex FIFO y multi-tenant.',
-      Architecture: 'React 19 + FastAPI + PostgreSQL + Supabase, Tauri para desktop, Docker para deploy.',
-      Result: 'Plataforma completa de facturación con generación de e-CF, inventario y autenticación JWT.',
-    },
-    tags: ['React 19', 'FastAPI', 'PostgreSQL', 'Tauri', 'Docker'],
-  },
-  {
-    icon: Kanban,
-    title: 'NoraHR — Kanban IT',
-    gradient: 'from-emerald-500 to-teal-500',
-    summary: 'Sistema Kanban de producción operativa con Gantt, SLA y chat en tiempo real.',
-    items: {
-      Challenge: 'Operaciones IT sin visibilidad de tareas, SLA ni seguimiento de incidencias.',
-      Solution: 'Tablero Kanban con drag-and-drop, vista Gantt, métricas operativas y control por roles.',
-      Architecture: 'React + Firebase (Auth, Firestore, Storage), @dnd-kit, GitHub Actions CI/CD.',
-      Result: 'Herramienta de uso operativo con permisos por rol, auditoría y deploy continuo.',
-    },
-    tags: ['React', 'Firebase', '@dnd-kit', 'GitHub Actions'],
-  },
-  {
-    icon: MonitorPlay,
-    title: 'Event Pro Jinaite',
-    gradient: 'from-rose-500 to-pink-500',
-    summary: 'Landing + CMS para empresa de producción audiovisual (LED, sonido, iluminación).',
-    items: {
-      Challenge: 'Empresa AV sin presencia web ni forma de gestionar su catálogo de servicios.',
-      Solution: 'Landing page con panel admin completo para editar contenido sin tocar código.',
-      Architecture: 'Vanilla JS + Supabase (Auth, DB, Storage) desplegado en Cloudflare.',
-      Result: 'Sitio administrable en producción con catálogo y panel para el equipo.',
-    },
-    tags: ['Vanilla JS', 'Supabase', 'Cloudflare', 'CMS'],
-  },
-]
+import { useLanguage } from '../i18n/LanguageContext'
 
 const containerVariants = {
   hidden: {},
@@ -61,6 +13,57 @@ const cardVariants = {
 }
 
 export default function CaseStudies() {
+  const { t } = useLanguage()
+
+  const steps = [
+    { key: 'challenge', label: t('cases.steps.challenge'), icon: Target, tone: 'bg-rose-500' },
+    { key: 'solution', label: t('cases.steps.solution'), icon: Puzzle, tone: 'bg-amber-500' },
+    { key: 'architecture', label: t('cases.steps.architecture'), icon: Network, tone: 'bg-cyan-500' },
+    { key: 'result', label: t('cases.steps.result'), icon: TrendingUp, tone: 'bg-emerald-500' },
+  ]
+
+  const caseStudies = [
+    {
+      icon: FileText,
+      title: 'FactuRD',
+      gradient: 'from-blue-600 to-indigo-600',
+      summary: t('cases.facturd.summary'),
+      items: {
+        challenge: t('cases.facturd.challenge'),
+        solution: t('cases.facturd.solution'),
+        architecture: t('cases.facturd.architecture'),
+        result: t('cases.facturd.result'),
+      },
+      tags: ['React 19', 'FastAPI', 'PostgreSQL', 'Tauri', 'Docker'],
+    },
+    {
+      icon: Kanban,
+      title: 'NoraHR — Kanban IT',
+      gradient: 'from-emerald-500 to-teal-500',
+      summary: t('cases.norahr.summary'),
+      items: {
+        challenge: t('cases.norahr.challenge'),
+        solution: t('cases.norahr.solution'),
+        architecture: t('cases.norahr.architecture'),
+        result: t('cases.norahr.result'),
+      },
+      tags: ['React', 'Firebase', '@dnd-kit', 'GitHub Actions'],
+    },
+    {
+      icon: MonitorPlay,
+      title: 'Event Pro Jinaite',
+      gradient: 'from-rose-500 to-pink-500',
+      summary: t('cases.eventpro.summary'),
+      items: {
+        challenge: t('cases.eventpro.challenge'),
+        solution: t('cases.eventpro.solution'),
+        architecture: t('cases.eventpro.architecture'),
+        result: t('cases.eventpro.result'),
+      },
+      tags: ['Vanilla JS', 'Supabase', 'Cloudflare', 'CMS'],
+    },
+  ]
+
   return (
     <section id="case-studies" className="section-padding bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
@@ -77,13 +80,13 @@ export default function CaseStudies() {
             viewport={{ once: true }}
             className="text-xs font-semibold text-accent uppercase tracking-[0.2em]"
           >
-            Case Studies
+            {t('cases.sectionBadge')}
           </motion.span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">
-            De problema a <span className="gradient-text">resultado</span>
+            {t('cases.sectionHeadingPrefix')} <span className="gradient-text">{t('cases.sectionHeadingGradient')}</span>
           </h2>
           <p className="text-slate-500 text-sm mt-2 max-w-xl mx-auto">
-            Cómo abordo cada proyecto: desafío, solución, arquitectura y resultado medible
+            {t('cases.sectionDescription')}
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-blue-400 rounded-full mx-auto mt-4" />
         </motion.div>
@@ -127,8 +130,8 @@ export default function CaseStudies() {
               </div>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                {steps.map(({ label, icon: StepIcon, tone }) => (
-                  <div key={label} className="rounded-2xl border border-slate-200 bg-white p-4">
+                {steps.map(({ key, label, icon: StepIcon, tone }) => (
+                  <div key={key} className="rounded-2xl border border-slate-200 bg-white p-4">
                     <div className="flex items-center gap-2 mb-2">
                       <span className={`flex h-7 w-7 items-center justify-center rounded-lg ${tone} text-white`}>
                         <StepIcon size={14} />
@@ -137,7 +140,7 @@ export default function CaseStudies() {
                         {label}
                       </span>
                     </div>
-                    <p className="text-sm leading-relaxed text-slate-600">{items[label]}</p>
+                    <p className="text-sm leading-relaxed text-slate-600">{items[key]}</p>
                   </div>
                 ))}
               </div>
