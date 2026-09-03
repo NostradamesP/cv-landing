@@ -65,6 +65,7 @@ function Avatar({ name, color }) {
 }
 
 function TaskCard({ task, onAdvance }) {
+  const { t } = useLanguage()
   const meta = priorityMeta[task.priority] || priorityMeta.Media
   const PriorityIcon = meta.icon
 
@@ -798,6 +799,7 @@ const liveSites = [
 ]
 
 function WebsiteFallback({ site }) {
+  const { t } = useLanguage()
   return (
     <div className="flex h-[560px] flex-col items-center justify-center bg-gradient-to-br from-[#1b0f1f] via-[#221028] to-[#15091a] px-6 text-center">
       <span className={`mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${site.tone} text-white shadow-lg shadow-black/30`}>
