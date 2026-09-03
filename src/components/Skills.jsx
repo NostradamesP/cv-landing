@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../i18n/LanguageContext'
 
-const skillCategoryKeys = [
-  'infra',
-  'cloud',
-  'frontend',
-  'backend',
-  'security',
-  'automation',
-  'gamedev',
+const skillCategories = [
+  { key: 'infra', skills: ['FortiGate', 'VLAN', 'VPN', 'Active Directory', 'GPO', 'ManageEngine', 'Mosyle MDM', 'Google Workspace'] },
+  { key: 'cloud', skills: ['Firebase', 'Supabase', 'Cloudflare', 'Docker', 'MinIO S3', 'Redis'] },
+  { key: 'frontend', skills: ['React 19', 'Flutter', 'Tailwind CSS', 'Vite', 'Framer Motion', 'Figma'] },
+  { key: 'backend', skills: ['Node.js', 'Fastify', 'PostgreSQL', 'REST APIs', 'WebSockets', 'Zod'] },
+  { key: 'security', skills: ['JWT', 'CSP', 'RBAC', 'OWASP', 'Fortinet Policies', 'SSL/TLS'] },
+  { key: 'automation', skills: ['n8n', 'OpenAI API', 'Gemini API', 'Python', 'CI/CD', 'GitHub Actions'] },
+  { key: 'gamedev', skills: ['Unity', 'C#', 'Procedural Maps', 'Python/Pillow', 'Game Design'] },
 ]
 
 const containerVariants = {
@@ -21,10 +21,9 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
 }
 
-function SkillCategory({ categoryKey }) {
+function SkillCategory({ categoryKey, skills }) {
   const { t } = useLanguage()
   const title = t(`skills.category.${categoryKey}`)
-  const skills = t(`skills.skills.${categoryKey}`)
 
   return (
     <motion.div
@@ -92,8 +91,8 @@ export default function Skills() {
           viewport={{ once: true, margin: '-30px' }}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
-          {skillCategoryKeys.map((key) => (
-            <SkillCategory key={key} categoryKey={key} />
+          {skillCategories.map(({ key, skills }) => (
+            <SkillCategory key={key} categoryKey={key} skills={skills} />
           ))}
         </motion.div>
       </div>
